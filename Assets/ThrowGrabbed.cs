@@ -23,11 +23,11 @@ public class ThrowGrabbed : MonoBehaviour
 
         if (ovrGrabbable.isGrabbed && OVRInput.GetDown(throwButton, ovrGrabbable.grabbedBy.Controller))
         {
-            Throw();
+            ThrowForward();
         }
     }
 
-    private void Throw()
+    private void ThrowForward()
     {
         Quaternion throwDirection = ovrGrabbable.grabbedBy.throwLine.rotation;
 
