@@ -8,6 +8,8 @@ public class BreakableObject : MonoBehaviour
     [SerializeField]
     int MaxHp;
     [SerializeField]
+    int destroyScore;
+    [SerializeField]
     float impulseThreshold;
     [SerializeField]
     float damageMultiplier;
@@ -45,7 +47,7 @@ public class BreakableObject : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        if (Time.time < lastCollisionTime + 0.1f)
+        if (Time.time < lastCollisionTime + 0.05f)
             return;
         lastCollisionTime = Time.time;
 

@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
 
     public Timer timer;
 
+    public int score;
+
     private void Awake()
     {
+        // Singleton pattern
         if (_instance != null && _instance != this)
             Destroy(this.gameObject);
         else
@@ -36,6 +39,7 @@ public class Timer
     bool isActive;
 
     public float LeftTime { get { return leftTime; } }
+    public bool IsOver{ get { return leftTime <= 0; } }
 
     public Timer(float startTime)
     {
@@ -43,7 +47,6 @@ public class Timer
         Reset();
     }
 
-    public bool IsOver{ get { return leftTime <= 0; } }
 
     public void Update()
     {
