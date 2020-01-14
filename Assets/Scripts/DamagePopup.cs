@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 
 public class DamagePopup : MonoBehaviour
 {
-    float lifetime;
+    Canvas canvas;
     Vector3 movement;
+    [SerializeField, Range(0, 10)]
+    float gravity;
+    [SerializeField, Range(0, 2)]
+    float lifetime;
 
     void Start()
     {
-        lifetime = 0.5f;
-        movement = new Vector3(Random.Range(-2f, 2f), Random.Range(5f, 6f), Random.Range(-2f, 2f));
+        movement = new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 3f), Random.Range(-1f, 1f));
     }
 
     void Update()
@@ -24,7 +26,8 @@ public class DamagePopup : MonoBehaviour
 
         this.transform.Translate(movement * Time.deltaTime);
 
-        movement.y -= 0.3f;
+        // 중력가속도
+        movement.y -= gravity * Time.deltaTime;
     }
 }
 

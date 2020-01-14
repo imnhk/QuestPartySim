@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     TextMeshProUGUI timerText;
     [SerializeField]
     GameObject damagePopup;
+    [SerializeField]
+    Camera cam;
+    
 
     private void Awake()
     {
@@ -31,11 +34,10 @@ public class UIManager : MonoBehaviour
         timerText.text = GameManager.Instance.timer.LeftTime.ToString("F1");
     }
 
-    
-
     public void MakeDamagePopup(Vector3 pos, int damage)
     {
         GameObject popupObj = Instantiate(damagePopup, pos, Quaternion.identity, this.transform);
+        popupObj.transform.LookAt(cam.transform);
         TextMeshProUGUI popup = popupObj.GetComponentInChildren<TextMeshProUGUI>();
         popup.text = damage.ToString();
     }
