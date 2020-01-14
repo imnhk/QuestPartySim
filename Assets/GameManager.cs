@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    Timer timer;
-    public GameObject timerText;
+    private static GameManager _instance;
+    public static GameManager Instance { get { return _instance; } }
+
+    public Timer timer;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+    }
 
     void Start()
     {
-        timer = new Timer(30, timerText);
+        timer = new Timer(30);
         timer.Start();
     }
 
@@ -25,12 +34,12 @@ public class Timer
     float startTime;
     float leftTime;
     bool isActive;
-    TextMeshProUGUI timerText;
 
-    public Timer(float startTime, GameObject timerText)
+    public float LeftTime { get { return leftTime; } }
+
+    public Timer(float startTime)
     {
         this.startTime = startTime;
-        this.timerText = timerText.GetComponent<TextMeshProUGUI>();
         Reset();
     }
 
@@ -42,7 +51,6 @@ public class Timer
             return;
 
         leftTime -= Time.deltaTime;
-        timerText.text = leftTime.ToString("F1");
 
         if (IsOver)
             isActive = false;
@@ -52,7 +60,6 @@ public class Timer
     {
         leftTime = startTime;
         isActive = false;
-        timerText.text = leftTime.ToString("F1");
     }
 
     public void Start()
