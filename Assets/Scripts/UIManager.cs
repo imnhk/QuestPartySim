@@ -11,9 +11,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI timerText;
     [SerializeField]
+    TextMeshProUGUI scoreText;
+
+    [SerializeField]
     GameObject damagePopup;
     [SerializeField]
     Camera cam;
+
+    private Game currentGame;
     
 
     private void Awake()
@@ -26,12 +31,13 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+        currentGame = GameManager.Instance.game;
     }
 
     void Update()
     {
-        timerText.text = GameManager.Instance.timer.LeftTime.ToString("F1");
+        timerText.text = currentGame.timer.LeftTime.ToString("F1");
+        scoreText.text = currentGame.score.ToString();
     }
 
     public void MakeDamagePopup(Vector3 pos, int damage)

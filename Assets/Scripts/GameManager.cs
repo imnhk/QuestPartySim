@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
-    public Timer timer;
-
-    public int score;
+    public Game game;
 
     private void Awake()
     {
@@ -22,22 +20,71 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        timer = new Timer(30);
-        timer.Start();
+        game = new Game();
+        game.Start();
     }
 
     void Update()
     {
-        timer.Update();
+        game.Update();
+    }
+
+    // 디버그용
+    public void ResetGame()
+    {
+        game.Reset();
+        game.Start();
+    }
+    public void ReloadScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+}
+
+public class Game
+{
+    public const float TIME_LIMIT = 60;
+    public Timer timer;
+
+    public float LeftTime { get { return timer.LeftTime; } }
+    public bool IsOver { get { return LeftTime <= 0; } }
+
+    public int totalDamage;
+    public int destroyCount;
+    public int score;
+
+    public Game()
+    {
+        timer = new Timer(TIME_LIMIT);
+    }
+
+    public void Reset()
+    {
+        score = 0;
+        timer.Reset();
+
+        totalDamage = 0;
+        destroyCount = 0;
+    }
+
+    public void Start()
+    {
+        timer.Start();
+    }
+
+    public void Update()
+    {
+        if(!timer.IsOver)
+            timer.Update();
     }
 }
 
 public class Timer
 {
-    float startTime;
     float leftTime;
     bool isActive;
 
+    public float startTime;
     public float LeftTime { get { return leftTime; } }
     public bool IsOver{ get { return leftTime <= 0; } }
 

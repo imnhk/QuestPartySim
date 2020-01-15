@@ -19,7 +19,6 @@ public class BreakableObject : MonoBehaviour
     int hp;
     float lastCollisionTime;
 
-
     HitParticle particle;
 
     private void Awake()
@@ -41,12 +40,14 @@ public class BreakableObject : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(this.gameObject);
+            GameManager.Instance.game.destroyCount += 1;
+            GameManager.Instance.game.score += destroyScore;
+
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (Time.time < lastCollisionTime + 0.05f)
             return;
         lastCollisionTime = Time.time;
@@ -58,12 +59,13 @@ public class BreakableObject : MonoBehaviour
             int damage = (int)(impulse * damageMultiplier);
             hp -= damage;
 
-            // Debug.Log("impulse " + impulse);
             material.color = Color.Lerp(Color.black, startColor, (float)hp / MaxHp);
 
             particle.Play(collision.GetContact(0).point);
 
             UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
+            GameManager.Instance.game.totalDamage += damage;
+            GameManager.Instance.game.score += damage;
         }
     }
 
