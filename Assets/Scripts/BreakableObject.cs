@@ -40,8 +40,8 @@ public class BreakableObject : MonoBehaviour
         if(hp <= 0)
         {
             Destroy(this.gameObject);
-            GameManager.Instance.game.destroyCount += 1;
-            GameManager.Instance.game.score += destroyScore;
+            GameManager.Instance.game.DestroyCount += 1;
+            GameManager.Instance.game.AddScore(destroyScore);
 
         }
     }
@@ -64,8 +64,8 @@ public class BreakableObject : MonoBehaviour
             particle.Play(collision.GetContact(0).point);
 
             UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
-            GameManager.Instance.game.totalDamage += damage;
-            GameManager.Instance.game.score += damage;
+            GameManager.Instance.game.TotalDamage += damage;
+            GameManager.Instance.game.AddScore(damage);
         }
     }
 

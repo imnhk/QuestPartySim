@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     public Game game;
+    public Animator doorAnimator;
 
     private void Awake()
     {
@@ -21,7 +22,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         game = new Game();
-        game.Start();
     }
 
     void Update()
@@ -29,12 +29,14 @@ public class GameManager : MonoBehaviour
         game.Update();
     }
 
-    // 디버그용
-    public void ResetGame()
+    public void StartGame()
     {
-        game.Reset();
         game.Start();
+        doorAnimator.SetTrigger("Open");
+        UIManager.Instance.startButton.gameObject.SetActive(false);
     }
+
+    // 디버그용
     public void ReloadScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
@@ -49,9 +51,36 @@ public class Game
     public float LeftTime { get { return timer.LeftTime; } }
     public bool IsOver { get { return LeftTime <= 0; } }
 
-    public int totalDamage;
-    public int destroyCount;
-    public int score;
+    private int totalDamage;
+    private int destroyCount;
+    private int score;
+    public int TotalDamage
+    {
+        get { return totalDamage; }
+        set
+        {
+            if (IsOver) return;
+            else totalDamage = value;
+        }
+    }
+    public int DestroyCount
+    {
+        get { return destroyCount; }
+        set
+        {
+            if (IsOver) return;
+            else destroyCount = value;
+        }
+    }
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            if (IsOver) return;
+            else score = value;
+        }
+    }
 
     public Game()
     {
@@ -77,6 +106,14 @@ public class Game
         if(!timer.IsOver)
             timer.Update();
     }
+
+    public void AddScore(int num)
+    {
+        if (IsOver)
+            return;
+        score += num;
+    }
+
 }
 
 public class Timer
