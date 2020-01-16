@@ -46,10 +46,11 @@ public class GameManager : MonoBehaviour
 public class Game
 {
     public const float TIME_LIMIT = 60;
-    public Timer timer;
+    private Timer timer;
 
     public float LeftTime { get { return timer.LeftTime; } }
-    public bool IsOver { get { return LeftTime <= 0; } }
+   // public bool IsOver { get { return LeftTime <= 0; } }
+    public bool IsOn { get { return timer.IsOn; } }
 
     private int totalDamage;
     private int destroyCount;
@@ -59,7 +60,7 @@ public class Game
         get { return totalDamage; }
         set
         {
-            if (IsOver) return;
+            if (IsOn) return;
             else totalDamage = value;
         }
     }
@@ -68,7 +69,7 @@ public class Game
         get { return destroyCount; }
         set
         {
-            if (IsOver) return;
+            if (IsOn) return;
             else destroyCount = value;
         }
     }
@@ -77,8 +78,7 @@ public class Game
         get { return score; }
         set
         {
-            if (IsOver) return;
-            else score = value;
+            if (IsOn )score = value;
         }
     }
 
@@ -89,9 +89,9 @@ public class Game
 
     public void Reset()
     {
-        score = 0;
         timer.Reset();
 
+        score = 0;
         totalDamage = 0;
         destroyCount = 0;
     }
@@ -107,13 +107,6 @@ public class Game
             timer.Update();
     }
 
-    public void AddScore(int num)
-    {
-        if (IsOver)
-            return;
-        score += num;
-    }
-
 }
 
 public class Timer
@@ -124,6 +117,7 @@ public class Timer
     public float startTime;
     public float LeftTime { get { return leftTime; } }
     public bool IsOver{ get { return leftTime <= 0; } }
+    public bool IsOn { get { return isActive; } }
 
     public Timer(float startTime)
     {

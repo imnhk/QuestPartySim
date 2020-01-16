@@ -4882,8 +4882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 100
   destroyScore: 100
-  impulseThreshold: 3
-  damageMultiplier: 2
+  impulseThreshold: 10
+  damageMultiplier: 1
 --- !u!114 &4848114032403793458
 MonoBehaviour:
   m_ObjectHideFlags: 0

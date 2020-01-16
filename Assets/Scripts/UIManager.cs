@@ -42,14 +42,14 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        timerText.text = currentGame.timer.LeftTime.ToString("F1");
+        timerText.text = currentGame.LeftTime.ToString("F1");
         foreach(TextMeshProUGUI score in scoreTexts)
             score.text = currentGame.Score.ToString();
     }
 
     public void MakeDamagePopup(Vector3 pos, int damage)
     {
-        if (GameManager.Instance.game.IsOver)
+        if (GameManager.Instance.game.IsOn == false)
             return;
 
         GameObject popupObj = Instantiate(damagePopup, pos, Quaternion.identity, this.transform);

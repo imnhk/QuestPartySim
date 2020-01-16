@@ -14,6 +14,7 @@ public class BreakableObject : MonoBehaviour
     [SerializeField]
     float damageMultiplier;
 
+    Rigidbody rb;
     Material material;
     Color startColor;
     int hp;
@@ -23,8 +24,13 @@ public class BreakableObject : MonoBehaviour
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
+        Assert.IsNotNull(rb);
+
         material = GetComponent<Renderer>().material;
         startColor = material.color;
+        Assert.IsNotNull(material);
+
         particle = GetComponent<HitParticle>();
     }
 
@@ -41,14 +47,14 @@ public class BreakableObject : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameManager.Instance.game.DestroyCount += 1;
-            GameManager.Instance.game.AddScore(destroyScore);
+            GameManager.Instance.game.Score += destroyScore;
 
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Time.time < lastCollisionTime + 0.05f)
+        if (Time.time < lastCollisionTime + 0.03f)
             return;
         lastCollisionTime = Time.time;
 
@@ -61,11 +67,12 @@ public class BreakableObject : MonoBehaviour
 
             material.color = Color.Lerp(Color.black, startColor, (float)hp / MaxHp);
 
-            particle.Play(collision.GetContact(0).point);
+            if(particle != null)
+                particle.Play(collision.GetContact(0).point);
 
             UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
             GameManager.Instance.game.TotalDamage += damage;
-            GameManager.Instance.game.AddScore(damage);
+            GameManager.Instance.game.Score += damage;
         }
     }
 
@@ -73,9 +80,14 @@ public class BreakableObject : MonoBehaviour
     {
         float impulse;
         if (coll.rigidbody != null)
-            impulse = coll.rigidbody.mass * coll.relativeVelocity.magnitude;
+        {
+            impulse = rb.mass * rb.velocity.magnitude + coll.rigidbody.mass * coll.rigidbody.velocity.magnitude;
+        }
         else
-            impulse = GetComponent<Rigidbody>().mass * coll.relativeVelocity.magnitude;
+        {
+            // 움직이지 않는 물체에 부딪힐 경우 (벽, 바닥 등)
+            impulse = rb.mass * rb.velocity.magnitude;
+        }
 
         return impulse;
     }
