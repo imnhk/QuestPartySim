@@ -197,12 +197,17 @@ namespace OculusSampleFramework
                 return;
             }
 
+            Collider[] grabbedColliders = m_grabbedObj.gameObject.GetComponentsInChildren<Collider>();
+
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
             Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
             Quaternion grabbableRotation = rot * m_grabbedObjectRotOff;
 
             if (m_movingObjectToHand)
             {
+                foreach(Collider col in grabbedColliders)
+                    col.isTrigger = true;
+
                 float travel = m_objectPullVelocity * Time.deltaTime;
                 Vector3 dir = grabbablePosition - m_grabbedObj.transform.position;
                 if(travel * travel * 1.1f > dir.sqrMagnitude)
@@ -215,6 +220,11 @@ namespace OculusSampleFramework
                     grabbablePosition = m_grabbedObj.transform.position + dir * travel;
                     grabbableRotation = Quaternion.RotateTowards(m_grabbedObj.transform.rotation, grabbableRotation, m_objectPullMaxRotationRate * Time.deltaTime);
                 }
+            }
+            else
+            {
+                foreach (Collider col in grabbedColliders)
+                    col.isTrigger = false;
             }
             grabbedRigidbody.MovePosition(grabbablePosition);
             grabbedRigidbody.MoveRotation(grabbableRotation);

@@ -3707,7 +3707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_ClearFlags
@@ -3735,7 +3735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Height
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Enabled
@@ -5348,6 +5348,26 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 426394279}
+    - target: {fileID: 5326519660398141199, guid: a3ff0eac673707b4fa906d7edd449e9a,
+        type: 3}
+      propertyPath: m_focusColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326519660398141199, guid: a3ff0eac673707b4fa906d7edd449e9a,
+        type: 3}
+      propertyPath: m_focusColor.g
+      value: 0.91636705
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326519660398141199, guid: a3ff0eac673707b4fa906d7edd449e9a,
+        type: 3}
+      propertyPath: m_focusColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326519660398141199, guid: a3ff0eac673707b4fa906d7edd449e9a,
+        type: 3}
+      propertyPath: m_focusColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3ff0eac673707b4fa906d7edd449e9a, type: 3}
 --- !u!1001 &8497051542780095296
