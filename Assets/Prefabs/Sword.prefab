@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 9039236975850517887}
   - component: {fileID: 9039236975850517884}
   - component: {fileID: -2271674897350630117}
+  - component: {fileID: 701015781957867643}
   m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints:
   - {fileID: 9039236975115839520}
+  mass: 0
   m_materialColorField: 
 --- !u!114 &-2271674897350630117
 MonoBehaviour:
@@ -210,6 +212,22 @@ MonoBehaviour:
   throwButton: 8192
   throwForce: 8
   angularVelocity: {x: 0, y: 0, z: 5}
+--- !u!114 &701015781957867643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039236975850517882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHp: 200
+  destroyScore: 200
+  impulseThreshold: 10
+  damageMultiplier: 0.5
 --- !u!1 &9039236976101225231
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,11 @@ public class UIManager : MonoBehaviour
 
     // Texts
     [SerializeField]
-    TextMeshProUGUI timerText;
+    TextMeshProUGUI timerUI;
     [SerializeField]
-    List<TextMeshProUGUI> scoreTexts;
+    TextMeshProUGUI strengthUI;
+    [SerializeField]
+    List<TextMeshProUGUI> scoreUI;
 
     // Buttons
     public Button startButton;
@@ -42,8 +44,11 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        timerText.text = currentGame.LeftTime.ToString("F1");
-        foreach(TextMeshProUGUI score in scoreTexts)
+        timerUI.text = currentGame.LeftTime.ToString("F1");
+
+        strengthUI.text = currentGame.Str.ToString();
+
+        foreach(TextMeshProUGUI score in scoreUI)
             score.text = currentGame.Score.ToString();
     }
 

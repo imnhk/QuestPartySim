@@ -16,4 +16,9 @@ public class HitParticle : MonoBehaviour
         ps.transform.position = pos;
         ps.Play();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Play(collision.GetContact(0).point);
+    }
 }

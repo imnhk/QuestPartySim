@@ -4770,6 +4770,7 @@ GameObject:
   - component: {fileID: 8497051541745243729}
   - component: {fileID: 4848114032403793458}
   - component: {fileID: 3818280419460992450}
+  - component: {fileID: 8988098669371099735}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4882,7 +4883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHp: 100
   destroyScore: 100
-  impulseThreshold: 10
+  impulseThreshold: 6
   damageMultiplier: 1
 --- !u!114 &4848114032403793458
 MonoBehaviour:
@@ -4913,4 +4914,20 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  mass: 0
   m_materialColorField: 
+--- !u!114 &8988098669371099735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497051541745243727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwButton: 8192
+  throwForce: 10
+  angularVelocity: {x: 5, y: 5, z: 5}

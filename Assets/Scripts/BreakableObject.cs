@@ -20,8 +20,6 @@ public class BreakableObject : MonoBehaviour
     int hp;
     float lastCollisionTime;
 
-    HitParticle particle;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,8 +28,6 @@ public class BreakableObject : MonoBehaviour
         material = GetComponent<Renderer>().material;
         startColor = material.color;
         Assert.IsNotNull(material);
-
-        particle = GetComponent<HitParticle>();
     }
 
     void Start()
@@ -66,9 +62,6 @@ public class BreakableObject : MonoBehaviour
             hp -= damage;
 
             material.color = Color.Lerp(Color.black, startColor, (float)hp / MaxHp);
-
-            if(particle != null)
-                particle.Play(collision.GetContact(0).point);
 
             UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
             GameManager.Instance.game.TotalDamage += damage;

@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         game.Start();
+
+        // 문열어어어
         doorAnimator.SetTrigger("Open");
         UIManager.Instance.startButton.gameObject.SetActive(false);
     }
@@ -46,15 +48,16 @@ public class GameManager : MonoBehaviour
 public class Game
 {
     public const float TIME_LIMIT = 60;
+    public const int DEFAULT_STR = 3;
     private Timer timer;
 
     public float LeftTime { get { return timer.LeftTime; } }
-   // public bool IsOver { get { return LeftTime <= 0; } }
     public bool IsOn { get { return timer.IsOn; } }
 
     private int totalDamage;
     private int destroyCount;
     private int score;
+    private int strength;
     public int TotalDamage
     {
         get { return totalDamage; }
@@ -81,19 +84,27 @@ public class Game
             if (IsOn )score = value;
         }
     }
+    public int Str
+    {
+        get { return strength; }
+        set
+        {
+            if (IsOn) strength = value;
+        }
+    }
 
     public Game()
     {
         timer = new Timer(TIME_LIMIT);
+        score = 0;
+        totalDamage = 0;
+        destroyCount = 0;
+        strength = DEFAULT_STR;
     }
 
     public void Reset()
     {
         timer.Reset();
-
-        score = 0;
-        totalDamage = 0;
-        destroyCount = 0;
     }
 
     public void Start()
@@ -103,7 +114,7 @@ public class Game
 
     public void Update()
     {
-        if(!timer.IsOver)
+        if(IsOn)
             timer.Update();
     }
 

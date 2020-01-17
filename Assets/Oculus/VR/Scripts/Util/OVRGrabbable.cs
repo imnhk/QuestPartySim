@@ -37,6 +37,9 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
 
+    // str 구현을 위해 추가
+    public float mass;
+
 	/// <summary>
 	/// If true, the object can currently be grabbed.
 	/// </summary>
@@ -151,6 +154,7 @@ public class OVRGrabbable : MonoBehaviour
     protected virtual void Start()
     {
         m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
+        mass = GetComponent<Rigidbody>().mass;
     }
 
     void OnDestroy()

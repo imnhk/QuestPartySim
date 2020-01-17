@@ -246,14 +246,24 @@ namespace OculusSampleFramework
             collOut = null;
             float closestMagSq = float.MaxValue;
 
+            // 무게 확인
+            int strength = GameManager.Instance.game.Str;
+ 
             // First test for objects within the grab volume, if we're using those.
             // (Some usage of DistanceGrabber will not use grab volumes, and will only 
             // use spherecasts, and that's supported.)
             foreach (OVRGrabbable cg in m_grabCandidates.Keys)
             {
                 DistanceGrabbable grabbable = cg as DistanceGrabbable;
+
                 bool canGrab = grabbable != null && grabbable.InRange && !(grabbable.isGrabbed && !grabbable.allowOffhandGrab);
                 if (!canGrab)
+                {
+                    continue;
+                }
+
+                // 무게 확인 조건 추가
+                if(grabbable.mass > strength)
                 {
                     continue;
                 }
