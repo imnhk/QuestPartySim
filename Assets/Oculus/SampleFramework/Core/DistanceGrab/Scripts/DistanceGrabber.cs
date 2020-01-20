@@ -150,6 +150,13 @@ namespace OculusSampleFramework
                     ((DistanceGrabber)closestGrabbable.grabbedBy).OffhandGrabbed(closestGrabbable);
                 }
 
+
+                // 힘에 따라서 벽에 고정된 obj Unstuck
+                if (closestGrabbable.StuckObj != null)
+                {
+                    closestGrabbable.StuckObj.UnStuck();
+                }
+
                 m_grabbedObj = closestGrabbable;
                 m_grabbedObj.GrabBegin(this, closestGrabbableCollider);
 
@@ -197,6 +204,7 @@ namespace OculusSampleFramework
                 return;
             }
 
+            // 여러 collider로 구성된 경우 대응을 위해 수정
             Collider[] grabbedColliders = m_grabbedObj.gameObject.GetComponentsInChildren<Collider>();
 
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
@@ -205,6 +213,7 @@ namespace OculusSampleFramework
 
             if (m_movingObjectToHand)
             {
+                // 가져오는 동안 충돌하지 않도록 처리
                 foreach(Collider col in grabbedColliders)
                     col.isTrigger = true;
 
@@ -223,6 +232,7 @@ namespace OculusSampleFramework
             }
             else
             {
+                // 손으로 이동 후 원상복구
                 foreach (Collider col in grabbedColliders)
                     col.isTrigger = false;
             }
@@ -263,9 +273,16 @@ namespace OculusSampleFramework
                 }
 
                 // 무게 확인 조건 추가
-                if(grabbable.mass > strength)
+                if(grabbable.Mass > strength)
                 {
                     continue;
+                }
+
+                // 부착 thresHold 확인 추가
+                if (grabbable.StuckObj != null)
+                {
+                    if (grabbable.Mass > strength)
+                        continue;
                 }
 
                 for (int j = 0; j < grabbable.grabPoints.Length; ++j)

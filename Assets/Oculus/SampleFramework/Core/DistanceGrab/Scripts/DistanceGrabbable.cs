@@ -47,9 +47,29 @@ namespace OculusSampleFramework
         }
         bool m_targeted;
 
+
+        // 추가된 코드
+        private StuckObject studkObj;
+        public StuckObject StuckObj
+        {
+            get { return studkObj; }
+        }
+        private float mass;
+        public float Mass
+        {
+            get { return mass; }
+        }
+
+
         protected override void Start()
         {
             base.Start();
+
+            // 힘과 무게 비교 처리를 위해 추가
+            mass = GetComponent<Rigidbody>().mass;
+            // 오브젝트 부착 처리를 위해 추가
+            studkObj = GetComponent<StuckObject>();
+
             m_crosshair = gameObject.GetComponentInChildren<GrabbableCrosshair>();
             m_renderer = gameObject.GetComponent<Renderer>();
             m_crosshairManager = FindObjectOfType<GrabManager>();
