@@ -19,6 +19,7 @@ namespace OculusSampleFramework
     {
         public string m_materialColorField;
 
+
         GrabbableCrosshair m_crosshair;
         GrabManager m_crosshairManager;
         Renderer m_renderer;
@@ -60,10 +61,10 @@ namespace OculusSampleFramework
             get { return mass; }
         }
 
-
         protected override void Start()
         {
             base.Start();
+
 
             // 힘과 무게 비교 처리를 위해 추가
             mass = GetComponent<Rigidbody>().mass;

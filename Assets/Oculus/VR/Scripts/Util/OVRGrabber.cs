@@ -266,9 +266,9 @@ public class OVRGrabber : MonoBehaviour
             if(m_grabbedObj.snapPosition)
             {
                 m_grabbedObjectPosOff = m_gripTransform.localPosition;
-                if(m_grabbedObj.snapOffset)
+                if(m_grabbedObj.snapPosition)
                 {
-                    Vector3 snapOffset = m_grabbedObj.snapOffset.position;
+                    Vector3 snapOffset = m_grabbedObj.SnapPos;
                     if (m_controller == OVRInput.Controller.LTouch) snapOffset.x = -snapOffset.x;
                     m_grabbedObjectPosOff += snapOffset;
                 }
@@ -283,9 +283,9 @@ public class OVRGrabber : MonoBehaviour
             if (m_grabbedObj.snapOrientation)
             {
                 m_grabbedObjectRotOff = m_gripTransform.localRotation;
-                if(m_grabbedObj.snapOffset)
+                if(m_grabbedObj.snapOrientation)
                 {
-                    m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
+                    m_grabbedObjectRotOff = Quaternion.FromToRotation(Vector3.zero, m_grabbedObj.SnapRot) * m_grabbedObjectRotOff;
                 }
             }
             else

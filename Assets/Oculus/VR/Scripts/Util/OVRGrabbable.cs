@@ -28,8 +28,14 @@ public class OVRGrabbable : MonoBehaviour
     protected bool m_snapPosition = false;
     [SerializeField]
     protected bool m_snapOrientation = false;
+    //[SerializeField]
+    //protected Transform m_snapOffset;
+    // Inspector에서 수정
     [SerializeField]
-    protected Transform m_snapOffset;
+    protected Vector3 snapOffsetPos;
+    [SerializeField]
+    protected Vector3 snapOffsetRot;
+
     [SerializeField]
     protected Collider[] m_grabPoints = null;
 
@@ -71,15 +77,25 @@ public class OVRGrabbable : MonoBehaviour
 
 	/// <summary>
 	/// An offset relative to the OVRGrabber where this object can snap when grabbed.
-	/// </summary>
+	/// </summary> 
+    /*
     public Transform snapOffset
     {
         get { return m_snapOffset; }
     }
+    */
+    public Vector3 SnapPos
+    {
+        get { return snapOffsetPos; }
+    }
+    public Vector3 SnapRot
+    {
+        get { return snapOffsetRot; }
+    }
 
-	/// <summary>
-	/// Returns the OVRGrabber currently grabbing this object.
-	/// </summary>
+    /// <summary>
+    /// Returns the OVRGrabber currently grabbing this object.
+    /// </summary>
     public OVRGrabber grabbedBy
     {
         get { return m_grabbedBy; }
@@ -151,6 +167,7 @@ public class OVRGrabbable : MonoBehaviour
     protected virtual void Start()
     {
         m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
+
     }
 
     void OnDestroy()
