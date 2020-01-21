@@ -15,6 +15,7 @@ permissions and limitations under the License.
 ************************************************************************************/
 
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -149,7 +150,7 @@ public class OVRGrabber : MonoBehaviour
 
         if (!m_parentHeldObject)
         {
-            MoveGrabbedObject(destPos, destRot);
+            MoveGrabbedObject(destPos, destRot, true);
         }
         m_lastPos = transform.position;
         m_lastRot = transform.rotation;
@@ -249,6 +250,7 @@ public class OVRGrabber : MonoBehaviour
         // Disable grab volumes to prevent overlaps
         GrabVolumeEnable(false);
 
+
         if (closestGrabbable != null)
         {
             if (closestGrabbable.isGrabbed)
@@ -262,8 +264,10 @@ public class OVRGrabber : MonoBehaviour
             m_lastPos = transform.position;
             m_lastRot = transform.rotation;
 
+
+
             // Set up offsets for grabbed object desired position relative to hand.
-            if(m_grabbedObj.snapPosition)
+            if (m_grabbedObj.snapPosition)
             {
                 m_grabbedObjectPosOff = m_gripTransform.localPosition;
                 if(m_grabbedObj.snapPosition)
@@ -285,7 +289,8 @@ public class OVRGrabber : MonoBehaviour
                 m_grabbedObjectRotOff = m_gripTransform.localRotation;
                 if(m_grabbedObj.snapOrientation)
                 {
-                    m_grabbedObjectRotOff = Quaternion.FromToRotation(Vector3.zero, m_grabbedObj.SnapRot) * m_grabbedObjectRotOff;
+                    Quaternion snapOffset =  Quaternion.Euler(m_grabbedObj.SnapRot);
+                    m_grabbedObjectRotOff = snapOffset * m_grabbedObjectRotOff;
                 }
             }
             else
@@ -349,9 +354,20 @@ public class OVRGrabber : MonoBehaviour
 
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
     {
+        // 진동 추가
+        StartCoroutine(VibrateController(0.05f, 0.3f, 0.5f, m_controller));
+
         m_grabbedObj.GrabEnd(linearVelocity, angularVelocity);
         if(m_parentHeldObject) m_grabbedObj.transform.parent = null;
         m_grabbedObj = null;
+    }
+
+    protected IEnumerator VibrateController(float waitTime, float frequency, float amplitude, OVRInput.Controller controller)
+    {
+        OVRInput.SetControllerVibration(frequency, amplitude, controller);
+        yield return new WaitForSeconds(waitTime);
+        OVRInput.SetControllerVibration(0, 0, controller);
+
     }
 
     protected virtual void GrabVolumeEnable(bool enabled)

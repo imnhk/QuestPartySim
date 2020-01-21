@@ -164,6 +164,8 @@ namespace OculusSampleFramework
 
             GrabVolumeEnable(false);
 
+
+
             if (closestGrabbable != null)
             {
 
@@ -177,6 +179,9 @@ namespace OculusSampleFramework
                 {
                     closestGrabbable.StuckObj.UnStuck();
                 }
+
+                // 진동 추가
+                StartCoroutine(base.VibrateController(0.05f, 0.3f, 0.5f, m_controller));
 
                 m_grabbedObj = closestGrabbable;
                 m_grabbedObj.GrabBegin(this, closestGrabbableCollider);
