@@ -132,7 +132,8 @@ public class OVRGrabbable : MonoBehaviour
     {
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
 	/// <summary>
@@ -144,6 +145,7 @@ public class OVRGrabbable : MonoBehaviour
         rb.isKinematic = m_grabbedKinematic;
         rb.velocity = linearVelocity;
         rb.angularVelocity = angularVelocity;
+        rb.useGravity = true;
         m_grabbedBy = null;
         m_grabbedCollider = null;
     }

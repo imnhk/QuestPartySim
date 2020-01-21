@@ -123,9 +123,9 @@ namespace OculusSampleFramework
                 {
                     m_target.Targeted = m_otherHand.m_target == m_target;
                 }
-                if(m_target != null)
+                if (m_target != null)
                     m_target.ClearColor();
-                if(target != null)
+                if (target != null)
                     target.SetColor(m_focusColor);
                 m_target = target;
                 m_targetCollider = targetColl;
@@ -134,6 +134,27 @@ namespace OculusSampleFramework
                     m_target.Targeted = true;
                 }
             }
+            /*
+            if (m_grabbedObj != null)
+            {
+                Collider[] grabbedColliders = m_grabbedObj.gameObject.GetComponentsInChildren<Collider>();
+
+                if (m_movingObjectToHand)
+                {
+                    foreach (Collider col in grabbedColliders)
+                        col.isTrigger = true;
+                }
+                else
+                {
+                    foreach (Collider col in grabbedColliders)
+                        col.isTrigger = false;
+                }
+            }
+            */
+            // 여러 collider로 구성된 경우 대응을 위해 수정
+            // 가져오는 동안 충돌하지 않도록 처리
+
+
         }
 
         protected override void GrabBegin()
@@ -145,11 +166,11 @@ namespace OculusSampleFramework
 
             if (closestGrabbable != null)
             {
+
                 if (closestGrabbable.isGrabbed)
                 {
                     ((DistanceGrabber)closestGrabbable.grabbedBy).OffhandGrabbed(closestGrabbable);
                 }
-
 
                 // 힘에 따라서 벽에 고정된 obj Unstuck
                 if (closestGrabbable.StuckObj != null)
@@ -170,6 +191,7 @@ namespace OculusSampleFramework
                 {
                     Vector3 relPos = m_grabbedObj.transform.position - transform.position;
                     m_movingObjectToHand = false;
+
                     relPos = Quaternion.Inverse(transform.rotation) * relPos;
                     m_grabbedObjectPosOff = relPos;
                     Quaternion relOri = Quaternion.Inverse(transform.rotation) * m_grabbedObj.transform.rotation;
@@ -189,7 +211,7 @@ namespace OculusSampleFramework
                     m_grabbedObjectRotOff = m_gripTransform.localRotation;
                     if (m_grabbedObj.snapOrientation)
                     {
-                        m_grabbedObjectRotOff = Quaternion.FromToRotation(Vector3.zero, m_grabbedObj.SnapRot) * m_grabbedObjectRotOff;
+                        m_grabbedObjectRotOff = Quaternion.FromToRotation(Vector3.zero, m_grabbedObj.SnapRot);
                         if (m_controller == OVRInput.Controller.LTouch) m_grabbedObjectRotOff = Quaternion.Inverse(m_grabbedObjectRotOff);
                     }
                 }
@@ -204,19 +226,12 @@ namespace OculusSampleFramework
                 return;
             }
 
-            // 여러 collider로 구성된 경우 대응을 위해 수정
-            Collider[] grabbedColliders = m_grabbedObj.gameObject.GetComponentsInChildren<Collider>();
-
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
             Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
             Quaternion grabbableRotation = rot * m_grabbedObjectRotOff;
 
             if (m_movingObjectToHand)
             {
-                // 가져오는 동안 충돌하지 않도록 처리
-                foreach(Collider col in grabbedColliders)
-                    col.isTrigger = true;
-
                 float travel = m_objectPullVelocity * Time.deltaTime;
                 Vector3 dir = grabbablePosition - m_grabbedObj.transform.position;
                 if(travel * travel * 1.1f > dir.sqrMagnitude)
@@ -230,12 +245,7 @@ namespace OculusSampleFramework
                     grabbableRotation = Quaternion.RotateTowards(m_grabbedObj.transform.rotation, grabbableRotation, m_objectPullMaxRotationRate * Time.deltaTime);
                 }
             }
-            else
-            {
-                // 손으로 이동 후 원상복구
-                foreach (Collider col in grabbedColliders)
-                    col.isTrigger = false;
-            }
+
             grabbedRigidbody.MovePosition(grabbablePosition);
             grabbedRigidbody.MoveRotation(grabbableRotation);
         }

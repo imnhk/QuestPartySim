@@ -20,6 +20,9 @@ public class BreakableObject : MonoBehaviour
     int hp;
     float lastCollisionTime;
 
+    AudioSource audioSrc;
+    ParticleSystem particle;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,6 +31,9 @@ public class BreakableObject : MonoBehaviour
         material = GetComponent<Renderer>().material;
         startColor = material.color;
         Assert.IsNotNull(material);
+
+        audioSrc = GetComponent<AudioSource>();
+        particle = GetComponentInChildren<ParticleSystem>();
     }
 
     void Start()
@@ -63,9 +69,16 @@ public class BreakableObject : MonoBehaviour
 
             material.color = Color.Lerp(Color.black, startColor, (float)hp / MaxHp);
 
-            UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
             GameManager.Instance.game.TotalDamage += damage;
             GameManager.Instance.game.Score += damage;
+            UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
+            if (audioSrc)
+                audioSrc.Play();
+            if (particle)
+            {
+                particle.transform.position = collision.GetContact(0).point;
+                particle.Play();
+            }
         }
     }
 
@@ -79,7 +92,7 @@ public class BreakableObject : MonoBehaviour
         else
         {
             // 움직이지 않는 물체에 부딪힐 경우 (벽, 바닥 등)
-            impulse = rb.mass * rb.velocity.magnitude;
+            impulse = rb.mass * rb.velocity.magnitude * 2;
         }
 
         return impulse;

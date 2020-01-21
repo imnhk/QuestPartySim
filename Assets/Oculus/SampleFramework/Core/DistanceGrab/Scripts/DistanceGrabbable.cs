@@ -75,7 +75,7 @@ namespace OculusSampleFramework
             m_renderer = gameObject.GetComponent<Renderer>();
             m_crosshairManager = FindObjectOfType<GrabManager>();
             m_mpb = new MaterialPropertyBlock();
-            RefreshCrosshair();
+            //RefreshCrosshair();
             m_mpb.SetColor(m_materialColorField, Color.white);
             m_renderer.SetPropertyBlock(m_mpb);
         }
