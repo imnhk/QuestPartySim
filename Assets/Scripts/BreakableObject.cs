@@ -81,7 +81,7 @@ public class BreakableObject : MonoBehaviour
             }
         }
     }
-
+    
     float GetImpulse(Collision coll)
     {
         float impulse;
@@ -97,5 +97,5 @@ public class BreakableObject : MonoBehaviour
 
         return impulse;
     }
-
+    
 }

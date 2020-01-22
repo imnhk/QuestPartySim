@@ -16,9 +16,7 @@ public class StuckObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        float impulse = GetImpulse(collision);
-
-        if(impulse > threshold)
+        if(GetImpulse(collision)> threshold)
         {
             UnStuck();
         }
@@ -29,6 +27,7 @@ public class StuckObject : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
     }
 
+    
     float GetImpulse(Collision coll)
     {
         float impulse;

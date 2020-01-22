@@ -33,9 +33,8 @@ public class GameManager : MonoBehaviour
     {
         game.Start();
 
-        // 문열어어어
-        doorAnimator.SetTrigger("Open");
-        UIManager.Instance.startButton.gameObject.SetActive(false);
+
+        //UIManager.Instance.startButton.gameObject.SetActive(false);
     }
 
     // 디버그용
