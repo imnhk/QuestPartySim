@@ -238,6 +238,10 @@ public class BreakableWindow : MonoBehaviour {
     {
         if (useCollision == true)
         {
+            if (col.relativeVelocity.magnitude * col.rigidbody.mass > health)
+                breakWindow();
+
+            /*
             if (health > 0)
             {
                 health -= col.impulse.magnitude;
@@ -247,7 +251,9 @@ public class BreakableWindow : MonoBehaviour {
                     breakWindow();
                 }
             }
+            
             else breakWindow();
+            */
         }        
     }
 }
