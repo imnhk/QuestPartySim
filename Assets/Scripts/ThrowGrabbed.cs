@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ThrowGrabbed : MonoBehaviour
 {
-    public OVRInput.Button throwButton;
     public float throwForce;
     public Vector3 angularVelocity;
     
+    private OVRInput.Button throwButton;
     private OVRGrabbable ovrGrabbable;
 
 
@@ -15,6 +15,7 @@ public class ThrowGrabbed : MonoBehaviour
     void Start()
     {
         ovrGrabbable = GetComponent<OVRGrabbable>();
+        throwButton = OVRInput.Button.PrimaryIndexTrigger;
     }
 
     // Update is called once per frame

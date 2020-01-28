@@ -13,6 +13,8 @@ public class BreakableObject : MonoBehaviour
     float impulseThreshold;
     [SerializeField]
     float damageMultiplier;
+    [SerializeField]
+    GameObject brokenObjPrefab;
 
     Rigidbody rb;
     Material material;
@@ -51,6 +53,10 @@ public class BreakableObject : MonoBehaviour
             GameManager.Instance.game.DestroyCount += 1;
             GameManager.Instance.game.Score += destroyScore;
 
+            if (brokenObjPrefab)
+            {
+                GameObject.Instantiate(brokenObjPrefab, transform.position, transform.rotation);
+            }
         }
     }
 
