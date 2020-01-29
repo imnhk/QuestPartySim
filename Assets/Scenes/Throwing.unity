@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2b52b26cfaa349046953009f119a2788,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2b52b26cfaa349046953009f119a2788,
         type: 3}
@@ -253,23 +253,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &82810610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82810607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
 --- !u!114 &82810611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &82810614
 MonoBehaviour:
@@ -529,10 +511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 10
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 0
+  damageThreshold: 2
+  breakThreshold: 5
   brokenObjPrefab: {fileID: 0}
 --- !u!4 &180973025 stripped
 Transform:
@@ -859,7 +840,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c958d92b984fb8043a396aaf24a766db,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1009991
+      value: 1.144
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c958d92b984fb8043a396aaf24a766db,
         type: 3}
@@ -889,7 +870,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c958d92b984fb8043a396aaf24a766db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c958d92b984fb8043a396aaf24a766db,
         type: 3}
@@ -981,10 +962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 5
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &409405323
 MonoBehaviour:
@@ -1017,7 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &409405325
 MonoBehaviour:
@@ -1144,7 +1123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 3
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &420363518
 MonoBehaviour:
@@ -1329,7 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 10
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &422887730
 MonoBehaviour:
@@ -1362,10 +1339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 300
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 2
+  breakThreshold: 8
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887732
 BoxCollider:
@@ -1392,7 +1368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 6
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &422887734
 MonoBehaviour:
@@ -1425,10 +1400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 300
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 2
+  breakThreshold: 8
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887736
 BoxCollider:
@@ -1455,7 +1429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 10
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &422887738
 MonoBehaviour:
@@ -1488,10 +1461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 300
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 2
+  breakThreshold: 8
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887740
 BoxCollider:
@@ -1596,17 +1568,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: db08fbac8c1623340b581372413d5d50,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.383
+      value: -4.249
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: db08fbac8c1623340b581372413d5d50,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17765379
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: db08fbac8c1623340b581372413d5d50,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.81
+      value: 0.122
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: db08fbac8c1623340b581372413d5d50,
         type: 3}
@@ -2069,7 +2041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 3
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &578715445
 MonoBehaviour:
@@ -2375,7 +2346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 3
   angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &769280732
 MonoBehaviour:
@@ -2869,10 +2839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 200
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 2
+  breakThreshold: 8
   brokenObjPrefab: {fileID: 0}
 --- !u!4 &919470170 stripped
 Transform:
@@ -3022,23 +2991,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 1.74, z: 0.1}
   m_Center: {x: 0.09, y: 0.01654008, z: -0.000000074505806}
---- !u!114 &924558045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924558040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
 --- !u!114 &924558046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,7 +3003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!1001 &929592183
 PrefabInstance:
@@ -3209,6 +3160,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8497051541745243729, guid: 2d38fb9bb7379dd41875b41f0f2a90a2,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d38fb9bb7379dd41875b41f0f2a90a2, type: 3}
 --- !u!1001 &1036843922
@@ -3231,7 +3187,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: -0.814
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
@@ -3241,7 +3197,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: -0.000000104308114
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
@@ -3251,12 +3207,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000002980232
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
@@ -3266,7 +3222,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.99998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 614a2847351a4ff4d993075a19e7e9d2,
         type: 3}
@@ -3306,23 +3262,6 @@ CapsuleCollider:
   m_Height: 0.67466325
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 0.3363165, z: -0.000000022351742}
---- !u!114 &1036843926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036843924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
 --- !u!54 &1036843927
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3370,7 +3309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!1 &1048541444
 GameObject:
@@ -3742,56 +3680,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7085791, y: 0.50061333, z: 0.9625148}
   m_Center: {x: 0.000000059604645, y: 0.24469334, z: 2.019484e-28}
---- !u!114 &1109477721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109477717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
---- !u!114 &1109477722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109477717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &1109477723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109477717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwForce: 5
-  angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!1 &1116451434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4546,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ea3c6b08ae1503440b3b149237bd0a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ea3c6b08ae1503440b3b149237bd0a52,
         type: 3}
@@ -4750,10 +4638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 5
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &1308362815
 MonoBehaviour:
@@ -4786,7 +4673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &1308362817
 MonoBehaviour:
@@ -5421,23 +5307,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1453456481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453456478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
 --- !u!114 &1453456482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5469,7 +5338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &1453456484
 MonoBehaviour:
@@ -5679,7 +5547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477367332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.999, y: 1.091, z: 2.086}
+  m_LocalPosition: {x: -0.937, y: 0.281, z: 2.086}
   m_LocalScale: {x: 0.04926432, y: 0.04926432, z: 0.04926432}
   m_Children: []
   m_Father: {fileID: 1532316483}
@@ -5697,7 +5565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 8
   angularVelocity: {x: 0, y: 0, z: 10}
 --- !u!114 &1477367335
 MonoBehaviour:
@@ -5927,7 +5794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1534757516
 Transform:
   m_ObjectHideFlags: 0
@@ -6284,17 +6151,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fba9b22d16c00f54f86d4243995223ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.036
+      value: -3.596
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fba9b22d16c00f54f86d4243995223ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.177
+      value: 0.82934564
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fba9b22d16c00f54f86d4243995223ee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.813
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fba9b22d16c00f54f86d4243995223ee,
         type: 3}
@@ -6644,7 +6511,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857321071}
   serializedVersion: 2
-  m_Mass: 3
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -6664,10 +6531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &1857321075
 MonoBehaviour:
@@ -6713,7 +6579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 8
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!1001 &1874158476
 PrefabInstance:
@@ -6781,6 +6646,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497051541745243729, guid: 2d38fb9bb7379dd41875b41f0f2a90a2,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497051541745243729, guid: 2d38fb9bb7379dd41875b41f0f2a90a2,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d38fb9bb7379dd41875b41f0f2a90a2, type: 3}
@@ -6986,17 +6861,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9445379aa1c628744a6c5c2f78fabac9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7073325
+      value: -3.9246674
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9445379aa1c628744a6c5c2f78fabac9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17702866
+      value: 0.8293743
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9445379aa1c628744a6c5c2f78fabac9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.74484015
+      value: 0.05684012
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9445379aa1c628744a6c5c2f78fabac9,
         type: 3}
@@ -7080,7 +6955,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1773a22b34a1cda44864847ea3d9a563,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.154
+      value: -0.597
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1773a22b34a1cda44864847ea3d9a563,
         type: 3}
@@ -7171,23 +7046,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1984773192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984773189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 100
-  destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
 --- !u!114 &1984773193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7219,7 +7077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!4 &1995495314 stripped
 Transform:
@@ -7242,12 +7099,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 206ff436e3b38b44cae79638091e3925,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.158
+      value: 1.121
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 206ff436e3b38b44cae79638091e3925,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.743
+      value: 1.795
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 206ff436e3b38b44cae79638091e3925,
         type: 3}
@@ -7272,7 +7129,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 206ff436e3b38b44cae79638091e3925,
         type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 206ff436e3b38b44cae79638091e3925,
         type: 3}
@@ -7364,10 +7221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 5
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &2001948227
 MonoBehaviour:
@@ -7400,7 +7256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &2001948229
 MonoBehaviour:
@@ -7554,7 +7409,7 @@ PrefabInstance:
     - target: {fileID: 9095041491155666605, guid: 385668aaa82129646863092c3bb12b06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 9095041491155666605, guid: 385668aaa82129646863092c3bb12b06,
         type: 3}
@@ -7687,10 +7542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 200
   destroyScore: 500
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &2074693097
 BoxCollider:
@@ -7840,7 +7694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079352071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.949, y: 1.205, z: 1.7849998}
+  m_LocalPosition: {x: -2.26, y: 0.292, z: 1.105}
   m_LocalScale: {x: 0.061654296, y: 0.061654296, z: 0.061654296}
   m_Children: []
   m_Father: {fileID: 1532316483}
@@ -7953,7 +7807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 8
   angularVelocity: {x: 0, y: 0, z: 10}
 --- !u!64 &2110250564
 MeshCollider:
@@ -8014,7 +7867,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 874e25dedf90b3a458a557228d5a2e4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 874e25dedf90b3a458a557228d5a2e4b,
         type: 3}
@@ -8106,10 +7959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 8
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &2141685403
 MonoBehaviour:
@@ -8142,7 +7994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!1001 &2143645162
 PrefabInstance:
@@ -8593,7 +8444,7 @@ PrefabInstance:
     - target: {fileID: 9095041491155666605, guid: 385668aaa82129646863092c3bb12b06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 9095041491155666605, guid: 385668aaa82129646863092c3bb12b06,
         type: 3}
@@ -9130,7 +8981,7 @@ PrefabInstance:
     - target: {fileID: 2302236626648573689, guid: 610f32250a92aae4db4fb34f377cfece,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.091480255
+      value: 0.117
       objectReference: {fileID: 0}
     - target: {fileID: 2302236626648573689, guid: 610f32250a92aae4db4fb34f377cfece,
         type: 3}
@@ -9378,7 +9229,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7426101036623529736, guid: bb7b9231c26a1e646919c6c04b9e9bb0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bb7b9231c26a1e646919c6c04b9e9bb0, type: 3}
 --- !u!4 &7639795682491486801 stripped
 Transform:
@@ -9505,6 +9357,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1103994141609839904, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103994141609839904, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1482920662667550748, guid: c0df541fcde07b7448b3fc0936a9acb7,
         type: 3}
       propertyPath: m_IsActive
@@ -9575,6 +9437,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0056695687
       objectReference: {fileID: 0}
+    - target: {fileID: 4599063706624596395, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599063706624596395, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902323932811937141, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902323932811937141, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473761815936622794, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473761815936622794, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6534418057628647617, guid: c0df541fcde07b7448b3fc0936a9acb7,
         type: 3}
       propertyPath: m_IsActive
@@ -9590,6 +9482,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6662203611098578524, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662203611098578524, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7125672679508986143, guid: c0df541fcde07b7448b3fc0936a9acb7,
         type: 3}
       propertyPath: m_IsActive
@@ -9604,6 +9506,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544683429518370109, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544683429518370109, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7851106535416544145, guid: c0df541fcde07b7448b3fc0936a9acb7,
         type: 3}
@@ -9660,6 +9572,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8246209294604404106, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246209294604404106, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438645886963391301, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: damageThreshold
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438645886963391301, guid: c0df541fcde07b7448b3fc0936a9acb7,
+        type: 3}
+      propertyPath: breakThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8939584947165559370, guid: c0df541fcde07b7448b3fc0936a9acb7,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -9709,10 +9641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 200
   destroyScore: 300
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
   brokenObjPrefab: {fileID: 6619579802499111077, guid: 0373a9e902ef86a4d9e3d8ae1b075995,
     type: 3}
 --- !u!1 &8296172668194391823

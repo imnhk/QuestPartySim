@@ -4771,6 +4771,7 @@ GameObject:
   - component: {fileID: 3818280419460992450}
   - component: {fileID: 8988098669371099735}
   - component: {fileID: 7281131878980950794}
+  - component: {fileID: 1476129723823760219}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4881,10 +4882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 100
-  impulseThreshold: 6
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &3818280419460992450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4916,8 +4917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 5, y: 5, z: 5}
 --- !u!82 &7281131878980950794
 AudioSource:
@@ -5015,3 +5014,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1476129723823760219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497051541745243727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

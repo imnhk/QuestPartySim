@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 7
   angularVelocity: {x: 0, y: 0, z: 6}
 --- !u!114 &4270152155817340347
 MonoBehaviour:
@@ -159,9 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 200
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 2
+  breakThreshold: 10
   brokenObjPrefab: {fileID: 7546187051873379024, guid: cba64414db9a18241b23a63076853166,
     type: 3}
