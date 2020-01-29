@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &1407955070351406258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,8 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &7223690477586035660
 MonoBehaviour:
@@ -290,10 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &1332829548773864524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,8 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &6982268627336317473
 MonoBehaviour:
@@ -454,10 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &6179198135713348911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,8 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &8744373516712660541
 MonoBehaviour:
@@ -618,10 +612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &3449239695516517785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,8 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &5317594646284757574
 MonoBehaviour:
@@ -782,10 +774,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &3442114460531006835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,8 +790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &6058968897558356133
 MonoBehaviour:
@@ -837,6 +827,8 @@ GameObject:
   - component: {fileID: 1169278306305812476}
   - component: {fileID: 573796795058868743}
   - component: {fileID: 7427334630948937294}
+  - component: {fileID: 5228441854439121975}
+  - component: {fileID: 3244996967559938490}
   m_Layer: 0
   m_Name: Dressing_Table
   m_TagString: Untagged
@@ -992,6 +984,114 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.019839438, y: 0.00068474683, z: 0.0038934024}
   m_Center: {x: -0.0000000021674416, y: 0.023775026, z: -0.0069094775}
+--- !u!82 &5228441854439121975
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419709396719408726}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9d5addb154da25945b3d4114c5a9cc1a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &3244996967559938490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419709396719408726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6430541700964894940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,10 +1219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &6439867756413705159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,8 +1235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &3815668758882969341
 MonoBehaviour:
@@ -1283,10 +1381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &4719018671718202827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,8 +1397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &3990417436167220962
 MonoBehaviour:
@@ -1486,10 +1582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
   destroyScore: 50
-  impulseThreshold: 3
-  damageMultiplier: 1
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 0}
 --- !u!114 &4532591231344322941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,8 +1598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 10
   angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!114 &1093632067482806080
 MonoBehaviour:

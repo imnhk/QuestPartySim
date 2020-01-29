@@ -6,7 +6,7 @@ public class CollisionSound : MonoBehaviour
 {
     private AudioSource audioSource;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         if (audioSource)
@@ -18,6 +18,10 @@ public class CollisionSound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        audioSource.Play();
+        if (collision.impulse.magnitude < .1f)
+            return;
+
+        if(audioSource)
+            audioSource.Play();
     }
 }

@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 7426101036623529739}
   - component: {fileID: 7426101036623529738}
   - component: {fileID: 917368368240912947}
-  - component: {fileID: 7426101036623529736}
   - component: {fileID: 7426101036623529737}
-  - component: {fileID: 7426101036623529206}
-  - component: {fileID: 7426101036623529207}
+  - component: {fileID: 4001487308756678893}
   m_Layer: 0
   m_Name: AirConditioner
   m_TagString: Untagged
@@ -128,22 +126,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.017173, y: 0.20088473, z: 0.046738565}
   m_Center: {x: 0.00000011920929, y: -0.002872929, z: 0.074283406}
---- !u!114 &7426101036623529736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454419251029106182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHp: 200
-  destroyScore: 500
-  impulseThreshold: 3
-  damageMultiplier: 1
 --- !u!114 &7426101036623529737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d2d3d4472567c478b74f150cb81582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 5
---- !u!114 &7426101036623529206
+  threshold: 6
+--- !u!114 &4001487308756678893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,28 +148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1454419251029106182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 1
-  m_snapOrientation: 1
-  snapOffsetPos: {x: 0.4, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 90, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &7426101036623529207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454419251029106182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 8192
-  throwForce: 2
-  angularVelocity: {x: 0, y: 0, z: 6}
+  destroyScore: 100
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 1084619144109262996, guid: cc77c4f2e23b13e4989166c32abdc873,
+    type: 3}

@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 41222667630094999}
   - component: {fileID: 5192124830104595513}
   - component: {fileID: 7037574704742593674}
-  - component: {fileID: 553363295470670315}
-  - component: {fileID: 5937641232871220837}
   - component: {fileID: 909832853107952279}
   m_Layer: 0
   m_Name: CyanShoe
@@ -99,40 +97,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &553363295470670315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289681929024171545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &5937641232871220837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289681929024171545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &909832853107952279
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -360,8 +324,6 @@ GameObject:
   - component: {fileID: 1752836971802400038}
   - component: {fileID: 7350640814431303684}
   - component: {fileID: 3095536849988456213}
-  - component: {fileID: 7000181225856611010}
-  - component: {fileID: 5294998385142619814}
   - component: {fileID: 6316832389463469926}
   m_Layer: 0
   m_Name: YellowShoe
@@ -447,40 +409,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7000181225856611010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2463097070897525031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &5294998385142619814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2463097070897525031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &6316832389463469926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -507,8 +435,6 @@ GameObject:
   - component: {fileID: 1140638008799677637}
   - component: {fileID: 403147647704040042}
   - component: {fileID: 8600442716162093422}
-  - component: {fileID: 5424215555026312988}
-  - component: {fileID: 7567413224106028795}
   - component: {fileID: 6824881568774046239}
   m_Layer: 0
   m_Name: BlueShoe
@@ -594,40 +520,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5424215555026312988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3419695290825242159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &7567413224106028795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3419695290825242159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &6824881568774046239
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -849,11 +741,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 500
   destroyScore: 500
-  impulseThreshold: 3
-  damageMultiplier: 1
-  brokenObjPrefab: {fileID: 0}
+  damageThreshold: 3
+  breakThreshold: 10
+  brokenObjPrefab: {fileID: 1084619144109262996, guid: cc77c4f2e23b13e4989166c32abdc873,
+    type: 3}
 --- !u!1 &3899202208539051295
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,8 +758,6 @@ GameObject:
   - component: {fileID: 280443566582154375}
   - component: {fileID: 2463605947749422500}
   - component: {fileID: 5328947407883388351}
-  - component: {fileID: 4451512438018494305}
-  - component: {fileID: 8174359772428769540}
   - component: {fileID: 64924152087966101}
   m_Layer: 0
   m_Name: YellowShoe
@@ -953,40 +843,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4451512438018494305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899202208539051295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &8174359772428769540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899202208539051295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &64924152087966101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1013,8 +869,6 @@ GameObject:
   - component: {fileID: 2460593175182761190}
   - component: {fileID: 3181873047988061037}
   - component: {fileID: 6170702252359144347}
-  - component: {fileID: 8492614088666681181}
-  - component: {fileID: 4716769146275897737}
   - component: {fileID: 5172098281294053350}
   m_Layer: 0
   m_Name: BrownShoe
@@ -1100,40 +954,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8492614088666681181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899709255974683344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &4716769146275897737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899709255974683344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &5172098281294053350
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1160,8 +980,6 @@ GameObject:
   - component: {fileID: 1979750828287446065}
   - component: {fileID: 6582296621825775810}
   - component: {fileID: 4505265409897795675}
-  - component: {fileID: 3654666784929875772}
-  - component: {fileID: 5258190080979124164}
   - component: {fileID: 2712036045907551923}
   m_Layer: 0
   m_Name: BrownShoe
@@ -1247,40 +1065,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3654666784929875772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922793633055447662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &5258190080979124164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922793633055447662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &2712036045907551923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1307,8 +1091,6 @@ GameObject:
   - component: {fileID: 2231489746978313674}
   - component: {fileID: 4503425301535766673}
   - component: {fileID: 8254907278283362350}
-  - component: {fileID: 8875197803368409803}
-  - component: {fileID: 8470944490807202348}
   - component: {fileID: 5527838593686987774}
   m_Layer: 0
   m_Name: CyanShoe
@@ -1394,40 +1176,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8875197803368409803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379380498159015832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &8470944490807202348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379380498159015832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &5527838593686987774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1454,8 +1202,6 @@ GameObject:
   - component: {fileID: 2999545159649463065}
   - component: {fileID: 5711285955080271676}
   - component: {fileID: 6783518720418805506}
-  - component: {fileID: 8333897524444399883}
-  - component: {fileID: 5573273134840936467}
   - component: {fileID: 4129243061919487819}
   m_Layer: 0
   m_Name: BlueShoe
@@ -1541,40 +1287,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8333897524444399883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297811679663328859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &5573273134840936467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297811679663328859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &4129243061919487819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1601,8 +1313,6 @@ GameObject:
   - component: {fileID: 5488725396115406588}
   - component: {fileID: 8010053702926291939}
   - component: {fileID: 1662382236844048168}
-  - component: {fileID: 5189871053433988607}
-  - component: {fileID: 7945562433317909755}
   - component: {fileID: 2945904353984410520}
   m_Layer: 0
   m_Name: RedShoe
@@ -1688,40 +1398,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5189871053433988607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6648336254359131101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &7945562433317909755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6648336254359131101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &2945904353984410520
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1748,8 +1424,6 @@ GameObject:
   - component: {fileID: 8737674163263523945}
   - component: {fileID: 1566228795042288541}
   - component: {fileID: 2275772506392337242}
-  - component: {fileID: 4098318286281969895}
-  - component: {fileID: 4839094319528393508}
   - component: {fileID: 7745406853970256882}
   m_Layer: 0
   m_Name: RedShoe
@@ -1835,40 +1509,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4098318286281969895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102963175019611681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
-  m_grabPoints: []
-  m_materialColorField: 
---- !u!114 &4839094319528393508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102963175019611681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwButton: 0
-  throwForce: 10
-  angularVelocity: {x: 0, y: 6, z: 0}
 --- !u!64 &7745406853970256882
 MeshCollider:
   m_ObjectHideFlags: 0
