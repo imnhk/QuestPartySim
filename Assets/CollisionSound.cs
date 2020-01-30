@@ -18,10 +18,10 @@ public class CollisionSound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.impulse.magnitude < .1f)
+        if (collision.impulse.magnitude < .2f)
             return;
 
-        if(audioSource)
+        if(audioSource && audioSource.enabled)
             audioSource.Play();
     }
 }
