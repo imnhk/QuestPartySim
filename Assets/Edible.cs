@@ -9,15 +9,15 @@ public class Edible : MonoBehaviour
     private int size = 3;
     private int leftCount;
 
-    private Vector3 defaultScale;
-
     private float eatDelay = 1f;
     private float lastEatTime = 0;
+
+    private AudioSource audioSource;
 
     private void Start()
     {
         leftCount = size;
-        defaultScale = transform.localScale;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Eaten()
@@ -27,12 +27,11 @@ public class Edible : MonoBehaviour
         lastEatTime = Time.time;
 
         leftCount -= 1;
-        // Debug.Log("Eaten! size " + leftCount);
+
+        if (audioSource)
+            audioSource.Play();
 
         if(leftCount <= 0)
             Destroy(this.gameObject);
-
-        transform.localScale = defaultScale * ((float)leftCount / size);
-
     }
 }

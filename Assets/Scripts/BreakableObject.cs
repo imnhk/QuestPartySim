@@ -17,7 +17,7 @@ public class BreakableObject : MonoBehaviour
     GameObject brokenObjPrefab;
 
     Rigidbody rb;
-    Material material;
+    //Material material;
     Color startColor;
     //int hp;
     float lastCollisionTime = 0;
@@ -28,10 +28,6 @@ public class BreakableObject : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Assert.IsNotNull(rb);
-
-        material = GetComponent<Renderer>().material;
-        startColor = material.color;
-        Assert.IsNotNull(material);
 
         particle = GetComponentInChildren<ParticleSystem>();
     }
@@ -59,8 +55,6 @@ public class BreakableObject : MonoBehaviour
         GameManager.Instance.game.TotalDamage += damage;
         GameManager.Instance.game.Score += damage;
         UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
-
-        //material.color = Color.Lerp(Color.black, startColor, (float)hp / MaxHp);
 
         if (particle)
         {
