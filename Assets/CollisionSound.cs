@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CollisionSound : MonoBehaviour
 {
+    // 효과음을 재생할 최소 충돌 속도
+    [SerializeField]
+    private const float threshold = 1f;
     private AudioSource audioSource;
-    // Start is called before the first frame update
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        // 효과음은 Scene 시작에 재생 또는 Loop되지 않는다
         if (audioSource)
         {
             audioSource.playOnAwake = false;
@@ -18,7 +22,7 @@ public class CollisionSound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude < 1f)
+        if (collision.relativeVelocity.magnitude < threshold)
             return;
 
         if(audioSource && audioSource.enabled)
