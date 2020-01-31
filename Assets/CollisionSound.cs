@@ -18,7 +18,7 @@ public class CollisionSound : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.impulse.magnitude < .2f)
+        if (collision.relativeVelocity.magnitude < 1f)
             return;
 
         if(audioSource && audioSource.enabled)
