@@ -19,8 +19,10 @@ public class BreakableWindow : MonoBehaviour {
     public bool addTorques = true;
     public bool hideSplintersInHierarchy = true;
     public bool useCollision = true;
+
     [Tooltip("Use 0 for breaking immediately if a collision is detected.")]
     public float health = 0;
+    public int breakScore = 200;
 
     [Space]
     [Space]
@@ -199,6 +201,10 @@ public class BreakableWindow : MonoBehaviour {
     {
         if (isBroken == false)
         {
+            // 점수 추가
+            GameManager.Instance.game.AddScore(breakScore);
+
+
             if (allreadyCalculated == true)
             {
                 splinterParent.SetActive(true);

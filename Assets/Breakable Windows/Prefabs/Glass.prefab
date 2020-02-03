@@ -116,7 +116,7 @@ MonoBehaviour:
   addTorques: 0
   hideSplintersInHierarchy: 1
   useCollision: 1
-  health: 3
+  health: 5
   destroyPhysicsTime: 0
   destroyColliderWithPhysics: 0
   destroySplintersTime: 2

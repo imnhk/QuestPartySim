@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class DamagePopup : MonoBehaviour
 {
     Canvas canvas;
-    Vector3 movement;
+    [SerializeField]
+    private Vector3 movement;
     [SerializeField, Range(0, 10)]
-    float gravity;
+    private float gravity;
     [SerializeField, Range(0, 2)]
-    float lifetime;
+    private float lifetime;
 
     void Start()
     {
-        movement = new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 3f), Random.Range(-1f, 1f));
+        movement += new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.5f, 0.5f), Random.Range(-0.2f, 0.2f));      
     }
 
     void Update()

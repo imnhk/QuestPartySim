@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class StuckObject : MonoBehaviour
 {
-    public float threshold;
+    [SerializeField]
+    private float threshold;
+    [SerializeField]
+    private int unstuckScore = 100;
 
-    Rigidbody rb;  
+    private Rigidbody rb;
+    private bool isStuck = true;
 
     private void Awake()
     {
@@ -16,6 +20,9 @@ public class StuckObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isStuck)
+            return;
+
         if(GetImpulse(collision)> threshold)
         {
             UnStuck();
@@ -24,7 +31,10 @@ public class StuckObject : MonoBehaviour
 
     public void UnStuck()
     {
+        isStuck = false;
+
         rb.constraints = RigidbodyConstraints.None;
+        GameManager.Instance.game.AddScore(unstuckScore);
     }
 
     

@@ -27,7 +27,6 @@ public class BreakableObject : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Assert.IsNotNull(rb);
 
         particle = GetComponentInChildren<ParticleSystem>();
     }
@@ -35,7 +34,7 @@ public class BreakableObject : MonoBehaviour
     private void BreakObject()
     {
         GameManager.Instance.game.DestroyCount += 1;
-        GameManager.Instance.game.Score += destroyScore;
+        GameManager.Instance.game.AddScore(destroyScore);
 
         if (brokenObjPrefab)
         {
@@ -52,9 +51,7 @@ public class BreakableObject : MonoBehaviour
     private void DamageObject(Collision collision, float impulse)
     {
         int damage = (int)impulse;
-        GameManager.Instance.game.TotalDamage += damage;
-        GameManager.Instance.game.Score += damage;
-        UIManager.Instance.MakeDamagePopup(collision.GetContact(0).point, damage);
+        GameManager.Instance.game.AddScore(damage);
 
         if (particle)
         {
@@ -66,9 +63,7 @@ public class BreakableObject : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (HadCollisionIn(0.3f))
-        {
             return;
-        }
 
         float impulse = GetImpulse(collision);
 

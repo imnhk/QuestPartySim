@@ -7,6 +7,8 @@ public class Edible : MonoBehaviour
 
     [SerializeField]
     private int size = 3;
+    [SerializeField]
+    private int eatScore = 100;
     private int leftCount;
 
     private float eatDelay = 1f;
@@ -27,6 +29,7 @@ public class Edible : MonoBehaviour
         lastEatTime = Time.time;
 
         leftCount -= 1;
+        GameManager.Instance.game.AddScore(eatScore);
 
         if (audioSource)
             audioSource.Play();

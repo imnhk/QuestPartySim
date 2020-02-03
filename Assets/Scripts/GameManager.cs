@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     public Game game;
-    public Animator doorAnimator;
+    // public Animator doorAnimator;
 
     private void Awake()
     {
@@ -75,13 +75,19 @@ public class Game
             else destroyCount = value;
         }
     }
+
+    public void AddScore(int value)
+    {
+        if (!IsOn)
+            return;
+
+        UIManager.Instance.MakeDamagePopup(value);
+        score += value;
+
+    }
     public int Score
     {
         get { return score; }
-        set
-        {
-            if (IsOn )score = value;
-        }
     }
     public int Str
     {
