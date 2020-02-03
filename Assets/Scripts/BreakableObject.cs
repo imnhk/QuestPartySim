@@ -9,17 +9,12 @@ public class BreakableObject : MonoBehaviour
     int destroyScore = 100;
 
     [SerializeField]
-    private float damageThreshold = 3;
-    [SerializeField]
     private float breakThreshold = 10;
 
     [SerializeField]
     GameObject brokenObjPrefab;
 
     Rigidbody rb;
-    //Material material;
-    Color startColor;
-    //int hp;
     float lastCollisionTime = 0;
 
     ParticleSystem particle;
@@ -48,18 +43,6 @@ public class BreakableObject : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void DamageObject(Collision collision, float impulse)
-    {
-        int damage = (int)impulse;
-        GameManager.Instance.game.AddScore(damage);
-
-        if (particle)
-        {
-            particle.transform.position = collision.GetContact(0).point;
-            particle.Play();
-        }
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         if (HadCollisionIn(0.3f))
@@ -73,11 +56,6 @@ public class BreakableObject : MonoBehaviour
             return;
         }
         
-        if (impulse > damageThreshold )
-        {
-            DamageObject(collision, impulse);
-            return;
-        }
     }
 
     bool HadCollisionIn(float minCollisionTime)

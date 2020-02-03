@@ -150,7 +150,10 @@ public class Timer
         leftTime -= Time.deltaTime;
 
         if (IsOver)
+        {
+            leftTime = 0;
             isActive = false;
+        }
     }
 
     public void Reset()

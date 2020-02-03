@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 500
-  damageThreshold: 2
   breakThreshold: 12
   brokenObjPrefab: {fileID: 7000592222763133351, guid: 442de9a83aa31ba439b3f05fbc84f898,
     type: 3}
@@ -130,7 +129,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da4089e60e43bee41abcf611ace8085d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -362,7 +362,7 @@ public class OVRGrabber : MonoBehaviour
         m_grabbedObj = null;
     }
 
-    protected IEnumerator VibrateController(float waitTime, float frequency, float amplitude, OVRInput.Controller controller)
+    public IEnumerator VibrateController(float waitTime, float frequency, float amplitude, OVRInput.Controller controller)
     {
         OVRInput.SetControllerVibration(frequency, amplitude, controller);
         yield return new WaitForSeconds(waitTime);

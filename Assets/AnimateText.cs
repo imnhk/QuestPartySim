@@ -7,6 +7,8 @@ public class AnimateText : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private float defaultFontSize;
+    [SerializeField]
+    int maxSize = 30;
 
     void Start()
     {
@@ -19,10 +21,12 @@ public class AnimateText : MonoBehaviour
         if (text.fontSize > defaultFontSize)
             text.fontSize -= Time.deltaTime * 20;
         
+        
     }
 
-    public void Enlarge(float ratio)
+    public void Enlarge(float value)
     {
-        text.fontSize *= ratio;
+        text.fontSize += value;
+        text.fontSize = Mathf.Min(text.fontSize, maxSize);
     }
 }

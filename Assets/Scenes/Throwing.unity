@@ -1311,7 +1311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1116451436}
-  strengthUI: {fileID: 808748474}
   scoreTexts:
   - {fileID: 1413666370}
   - {fileID: 1048541446}
@@ -1714,7 +1713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 200
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &409405323
@@ -2316,7 +2314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 300
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887732
@@ -2377,7 +2374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 300
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887736
@@ -2438,7 +2434,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 300
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!65 &422887740
@@ -3776,7 +3771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 100
-  damageThreshold: 3
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!82 &615515641
@@ -5803,7 +5797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 500
-  damageThreshold: 2
   breakThreshold: 999
   brokenObjPrefab: {fileID: 0}
 --- !u!1 &1116451434
@@ -5841,7 +5834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.82, y: -0.34}
+  m_AnchoredPosition: {x: 2.8299994, y: -0.3399999}
   m_SizeDelta: {x: 43.43, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116451436
@@ -5975,6 +5968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59c09fad3a51e044adf43c6f7147636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSize: 30
 --- !u!1 &1159728337
 GameObject:
   m_ObjectHideFlags: 0
@@ -6993,7 +6987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 200
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &1308362815
@@ -7610,7 +7603,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413666368}
   m_LocalRotation: {x: -0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 0, z: -0.736}
+  m_LocalPosition: {x: 0, y: 0, z: -0.74}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942411709}
@@ -7618,7 +7611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -60, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.56, y: 0.93}
+  m_AnchoredPosition: {x: 3.57, y: 0.93}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413666370
@@ -7668,8 +7661,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 17.1
-  m_fontSizeBase: 17.1
+  m_fontSize: 17.3
+  m_fontSizeBase: 17.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7706,7 +7699,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -6.487383, z: -17.544641, w: 0}
+  m_margin: {x: 0, y: -9.32888, z: -21.084341, w: 0}
   m_textInfo:
     textComponent: {fileID: 1413666370}
     characterCount: 4
@@ -7752,6 +7745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59c09fad3a51e044adf43c6f7147636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSize: 30
 --- !u!1001 &1453456476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7880,7 +7874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 100
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!82 &1453456482
@@ -9820,7 +9813,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10291,7 +10284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 200
-  damageThreshold: 2
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &2001948227
@@ -11516,7 +11508,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 200
-  damageThreshold: 3
   breakThreshold: 20
   brokenObjPrefab: {fileID: 0}
 --- !u!114 &2141685403
@@ -11773,6 +11764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024400669635246782, guid: 573740b4455916a43b911d9e13d2a7d0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9145092898223215348, guid: 573740b4455916a43b911d9e13d2a7d0,
         type: 3}
@@ -13213,6 +13209,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8296172667931065369, guid: 610f32250a92aae4db4fb34f377cfece,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 610f32250a92aae4db4fb34f377cfece, type: 3}
 --- !u!1001 &6814884068250643708
@@ -13964,7 +13965,6 @@ GameObject:
   - component: {fileID: 3540680667422590890}
   - component: {fileID: 7070527331354999635}
   - component: {fileID: 8800976130472988560}
-  - component: {fileID: 8800976130472988561}
   m_Layer: 0
   m_Name: Bed_Fixed
   m_TagString: Untagged
@@ -13985,22 +13985,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03240166, y: 0.005973362, z: 0.019891204}
   m_Center: {x: 0.00000018122901, y: 0.00018713721, z: 0.000000018905185}
---- !u!114 &8800976130472988561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8800976130472988559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyScore: 100
-  damageThreshold: 3
-  breakThreshold: 999
-  brokenObjPrefab: {fileID: 0}
 --- !u!1 &9157027384390688284 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4379380498159015832, guid: bec5ee738eab94840a07f00e34055a08,
