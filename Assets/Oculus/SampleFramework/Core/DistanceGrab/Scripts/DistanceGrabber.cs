@@ -208,7 +208,7 @@ namespace OculusSampleFramework
                     m_grabbedObjectPosOff = m_gripTransform.localPosition;
                     if (m_grabbedObj.snapPosition)
                     {
-                        Vector3 snapOffset = m_grabbedObj.SnapPos;
+                        Vector3 snapOffset = m_grabbedObj.snapOffset.position;
                         if (m_controller == OVRInput.Controller.LTouch) snapOffset.x = -snapOffset.x;
                         m_grabbedObjectPosOff += snapOffset;
                     }
@@ -216,7 +216,7 @@ namespace OculusSampleFramework
                     m_grabbedObjectRotOff = m_gripTransform.localRotation;
                     if (m_grabbedObj.snapOrientation)
                     {
-                        m_grabbedObjectRotOff = Quaternion.FromToRotation(Vector3.zero, m_grabbedObj.SnapRot);
+                        m_grabbedObjectRotOff = m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
                         if (m_controller == OVRInput.Controller.LTouch) m_grabbedObjectRotOff = Quaternion.Inverse(m_grabbedObjectRotOff);
                     }
                 }

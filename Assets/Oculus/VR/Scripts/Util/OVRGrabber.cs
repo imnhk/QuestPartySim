@@ -269,13 +269,29 @@ public class OVRGrabber : MonoBehaviour
             // Set up offsets for grabbed object desired position relative to hand.
             if (m_grabbedObj.snapPosition)
             {
+                /*
                 m_grabbedObjectPosOff = m_gripTransform.localPosition;
-                if(m_grabbedObj.snapPosition)
+                if(m_grabbedObj.snapOffset)
                 {
-                    Vector3 snapOffset = m_grabbedObj.SnapPos;
+                    Vector3 snapOffset = m_grabbedObj.snapOffset.position;
                     if (m_controller == OVRInput.Controller.LTouch) snapOffset.x = -snapOffset.x;
                     m_grabbedObjectPosOff += snapOffset;
-                }
+                }*/
+                if (m_grabbedObj.snapOffset)
+{
+    Vector3 snapOffset = -m_grabbedObj.snapOffset.localPosition;
+    Vector3 snapOffsetScale = m_grabbedObj.snapOffset.lossyScale;
+    snapOffset = new Vector3(snapOffset.x * snapOffsetScale.x, snapOffset.y * snapOffsetScale.y, snapOffset.z * snapOffsetScale.z);
+    if (m_controller == OVRInput.Controller.LTouch)
+    {
+        snapOffset.x = -snapOffset.x;
+    }
+    m_grabbedObjectPosOff = snapOffset;
+}
+else
+{
+    m_grabbedObjectPosOff = Vector3.zero;
+}
             }
             else
             {
@@ -287,10 +303,18 @@ public class OVRGrabber : MonoBehaviour
             if (m_grabbedObj.snapOrientation)
             {
                 m_grabbedObjectRotOff = m_gripTransform.localRotation;
-                if(m_grabbedObj.snapOrientation)
+                /*
+                if(m_grabbedObj.snapOffset)
                 {
-                    Quaternion snapOffset =  Quaternion.Euler(m_grabbedObj.SnapRot);
-                    m_grabbedObjectRotOff = snapOffset * m_grabbedObjectRotOff;
+                    m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
+                }*/
+                if (m_grabbedObj.snapOffset)
+                {
+                    m_grabbedObjectRotOff = Quaternion.Inverse(m_grabbedObj.snapOffset.localRotation);
+                }
+                else
+                {
+                    m_grabbedObjectRotOff = Quaternion.identity;
                 }
             }
             else

@@ -31,10 +31,12 @@ public class OVRGrabbable : MonoBehaviour
     //[SerializeField]
     //protected Transform m_snapOffset;
     // Inspector에서 수정
+    // [SerializeField]
+    // protected Vector3 snapOffsetPos;
+    // [SerializeField]
+    // protected Vector3 snapOffsetRot;
     [SerializeField]
-    protected Vector3 snapOffsetPos;
-    [SerializeField]
-    protected Vector3 snapOffsetRot;
+    protected Transform m_snapOffset;
 
     [SerializeField]
     protected Collider[] m_grabPoints = null;
@@ -78,12 +80,12 @@ public class OVRGrabbable : MonoBehaviour
 	/// <summary>
 	/// An offset relative to the OVRGrabber where this object can snap when grabbed.
 	/// </summary> 
-    /*
+    
     public Transform snapOffset
     {
         get { return m_snapOffset; }
     }
-    */
+    /*
     public Vector3 SnapPos
     {
         get { return snapOffsetPos; }
@@ -91,7 +93,7 @@ public class OVRGrabbable : MonoBehaviour
     public Vector3 SnapRot
     {
         get { return snapOffsetRot; }
-    }
+    }*/
 
     /// <summary>
     /// Returns the OVRGrabber currently grabbing this object.
