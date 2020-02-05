@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 280811327364182627}
   - component: {fileID: 280811327364182624}
   - component: {fileID: 8557955226066602312}
-  - component: {fileID: 6395325816824623628}
   m_Layer: 0
   m_Name: Dart
   m_TagString: Untagged
@@ -114,8 +113,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.68023455, y: 0.03, z: 0.03}
-  m_Center: {x: -0.024331734, y: 0.0061118267, z: 0}
+  m_Size: {x: 0.5898941, y: 0.010788034, z: 0.030000001}
+  m_Center: {x: -0.069502145, y: -0.003494156, z: 0}
 --- !u!114 &280811327364182627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,17 +158,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc0cf1d9dd71c64fa7f7d7b4a370788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!138 &6395325816824623628
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8125700426595953519}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
