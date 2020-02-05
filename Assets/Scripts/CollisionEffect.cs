@@ -32,10 +32,14 @@ public class CollisionEffect : MonoBehaviour
         if (collision.relativeVelocity.magnitude < threshold)
             return;
 
-        if(audioSource && audioSource.enabled)
-            audioSource.Play();
-
         int impulse = (int)GetImpulse(collision);
+
+        if (audioSource && audioSource.enabled)
+        {
+            audioSource.volume = Mathf.Clamp((float)impulse / 3, 0, 1);
+            audioSource.Play();
+        }
+
         if (impulse > 0)
             GameManager.Instance.game.AddScore(impulse);
 

@@ -16,7 +16,11 @@ public class ThrowGrabbed : MonoBehaviour
     void Start()
     {
         ovrGrabbable = GetComponent<OVRGrabbable>();
+        if (!ovrGrabbable)
+            Debug.LogError("No ovrgrabbable at " + gameObject.name);
         rb = GetComponent<Rigidbody>();
+        if (!rb)
+            Debug.LogError("No rigidbody at " + gameObject.name);
 
         throwButton = OVRInput.Button.PrimaryIndexTrigger;
     }
@@ -24,6 +28,7 @@ public class ThrowGrabbed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (ovrGrabbable.isGrabbed && OVRInput.GetDown(throwButton, ovrGrabbable.grabbedBy.Controller))
         {
             ThrowForward();
