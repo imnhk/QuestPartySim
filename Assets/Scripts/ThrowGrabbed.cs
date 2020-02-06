@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ThrowGrabbed : MonoBehaviour
 {
@@ -12,8 +10,7 @@ public class ThrowGrabbed : MonoBehaviour
     private Rigidbody rb;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ovrGrabbable = GetComponent<OVRGrabbable>();
         if (!ovrGrabbable)
@@ -25,14 +22,10 @@ public class ThrowGrabbed : MonoBehaviour
         throwButton = OVRInput.Button.PrimaryIndexTrigger;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
         if (ovrGrabbable.isGrabbed && OVRInput.GetDown(throwButton, ovrGrabbable.grabbedBy.Controller))
-        {
             ThrowForward();
-        }
     }
 
     private void ThrowForward()

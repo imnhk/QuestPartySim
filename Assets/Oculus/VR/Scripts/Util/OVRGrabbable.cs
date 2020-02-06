@@ -27,14 +27,7 @@ public class OVRGrabbable : MonoBehaviour
     [SerializeField]
     protected bool m_snapPosition = false;
     [SerializeField]
-    protected bool m_snapOrientation = false;
-    //[SerializeField]
-    //protected Transform m_snapOffset;
-    // Inspector에서 수정
-    // [SerializeField]
-    // protected Vector3 snapOffsetPos;
-    // [SerializeField]
-    // protected Vector3 snapOffsetRot;
+    protected bool m_snapOrientation = false;   
     [SerializeField]
     protected Transform m_snapOffset;
 
