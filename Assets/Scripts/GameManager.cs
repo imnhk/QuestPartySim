@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     public Game game;
-    // public Animator doorAnimator;
+
+    [SerializeField]
+    private ElevatorAnimation elevator;
 
     private void Awake()
     {
@@ -31,10 +33,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        elevator.OpenDoor();
         game.Start();
-
-
-        //UIManager.Instance.startButton.gameObject.SetActive(false);
     }
 
     // 디버그용
