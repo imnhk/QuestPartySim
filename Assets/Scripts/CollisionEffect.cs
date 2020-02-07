@@ -40,7 +40,7 @@ public class CollisionEffect : MonoBehaviour
             audioSource.Play();
         }
 
-        if (impulse > 0)
+        if (impulse >= 1)
             GameManager.Instance.game.AddScore((int)impulse);  
     }
 

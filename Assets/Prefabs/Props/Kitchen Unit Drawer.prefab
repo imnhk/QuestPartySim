@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3859145002786216139}
   - component: {fileID: 6814884068767216922}
   - component: {fileID: 6814884068767216921}
-  - component: {fileID: 6814884068767216923}
   - component: {fileID: 6814884068767216916}
   - component: {fileID: 2791906357850769097}
   - component: {fileID: 7079456747413087589}
@@ -114,23 +113,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7421999, y: 0.53684306, z: 0.56213}
   m_Center: {x: 0.00000002980233, y: -0.2684216, z: 0.024815237}
---- !u!114 &6814884068767216923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292898659055299607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f76b080540bbbb44882d8187816519c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyScore: 200
-  damageThreshold: 2
-  breakThreshold: 10
-  brokenObjPrefab: {fileID: 1084619144109262996, guid: cc77c4f2e23b13e4989166c32abdc873,
-    type: 3}
 --- !u!114 &6814884068767216916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 10
+  unstuckScore: 100
 --- !u!114 &2791906357850769097
 MonoBehaviour:
   m_ObjectHideFlags: 0

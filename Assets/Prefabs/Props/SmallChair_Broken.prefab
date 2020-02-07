@@ -32,11 +32,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5338513541332479179}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.0147923315, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0147923315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6837072249313710275}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4043495498942092909
 MeshFilter:
@@ -130,8 +130,7 @@ MonoBehaviour:
   m_allowOffhandGrab: 1
   m_snapPosition: 0
   m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &665622918196524014
@@ -368,7 +367,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &4319514954063294043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,9 +382,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &900316925578275355
@@ -545,7 +544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6837072249313710275}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5015446466694816305
 MeshFilter:
@@ -622,7 +621,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &2203460429006347153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,9 +636,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &872383351331787857
@@ -876,7 +875,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &2648576219358289887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,9 +890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &4021667509878485368
@@ -1053,7 +1052,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6837072249313710275}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6853445584650571825
 MeshFilter:
@@ -1130,7 +1129,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &5835231250846708316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,9 +1144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &4684305275527719035
@@ -1298,9 +1297,9 @@ Transform:
   m_LocalPosition: {x: 0.769, y: -9.857, z: 1.755}
   m_LocalScale: {x: 23, y: 20, z: 23}
   m_Children:
+  - {fileID: 3958133831889112560}
   - {fileID: 6835678544729877829}
   - {fileID: 2909060312609430109}
-  - {fileID: 3958133831889112560}
   - {fileID: 3201978006319165592}
   - {fileID: 3156720006089536264}
   m_Father: {fileID: 0}

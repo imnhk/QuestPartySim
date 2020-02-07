@@ -130,9 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &1255415937332511939
@@ -386,9 +386,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &1627365046713319784
@@ -642,9 +642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &3510160466993351747
@@ -933,9 +933,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
   m_snapPosition: 0
-  m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 397835544637208470, guid: 4301ce7098da6a34a818b1dfd005b65c,
+    type: 3}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &8209795017071293446
@@ -1190,8 +1190,7 @@ MonoBehaviour:
   m_allowOffhandGrab: 1
   m_snapPosition: 0
   m_snapOrientation: 0
-  snapOffsetPos: {x: 0, y: 0, z: 0}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &9163753526730015109
