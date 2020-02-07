@@ -20,4 +20,11 @@ public class ElevatorAnimation : MonoBehaviour
     {
         animator.SetTrigger("Close");
     }
+
+    public IEnumerator OpenDoorFor(float time)
+    {
+        animator.SetTrigger("Open");
+        yield return new WaitForSeconds(time);
+        animator.SetTrigger("Close");
+    }
 }

@@ -76,7 +76,10 @@ public class OVRGrabbable : MonoBehaviour
     
     public Transform snapOffset
     {
-        get { return m_snapOffset; }
+        get {
+            if (!m_snapOffset)
+                Debug.LogError(this.name);
+            return m_snapOffset; }
     }
     /*
     public Vector3 SnapPos

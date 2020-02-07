@@ -24,17 +24,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         game = new Game();
+        StartCoroutine(StartGameIn(1f));
+    }
+
+    IEnumerator StartGameIn(float time)
+    {
+        yield return new WaitForSeconds(time);
+        game.Start();
+        StartCoroutine(elevator.OpenDoorFor(3f));
     }
 
     void Update()
     {
         game.Update();
-    }
-
-    public void StartGame()
-    {
-        elevator.OpenDoor();
-        game.Start();
     }
 
     // 디버그용

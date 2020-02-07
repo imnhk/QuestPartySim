@@ -198,7 +198,7 @@ public class OVRPlayerController : MonoBehaviour
 		}
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		if (!playerControllerEnabled)
 		{

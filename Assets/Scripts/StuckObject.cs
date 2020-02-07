@@ -31,6 +31,9 @@ public class StuckObject : MonoBehaviour
 
     public void UnStuck()
     {
+        if (!isStuck)
+            return;
+
         isStuck = false;
 
         rb.constraints = RigidbodyConstraints.None;

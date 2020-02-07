@@ -140,11 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 1
+  m_allowOffhandGrab: 0
+  m_snapPosition: 0
   m_snapOrientation: 0
-  snapOffsetPos: {x: 0.13, y: 0, z: 0.17}
-  snapOffsetRot: {x: 0, y: 0, z: 0}
+  m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: 
 --- !u!114 &4270152155817340346
@@ -160,7 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyScore: 200
-  damageThreshold: 2
   breakThreshold: 10
   brokenObjPrefab: {fileID: 7546187051873379024, guid: cba64414db9a18241b23a63076853166,
     type: 3}
