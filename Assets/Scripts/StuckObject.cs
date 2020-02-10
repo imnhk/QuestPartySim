@@ -23,10 +23,8 @@ public class StuckObject : MonoBehaviour
         if (!isStuck)
             return;
 
-        if(GetImpulse(collision)> threshold)
-        {
+        if(GetImpulse(collision) > threshold)
             UnStuck();
-        }
     }
 
     public void UnStuck()

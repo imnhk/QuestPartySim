@@ -12,6 +12,7 @@ public class Mouth : MonoBehaviour
         mouthAudio = GetComponent<AudioSource>();
     }
 
+
     private void OnTriggerStay(Collider other)
     {
         Edible food = other.gameObject.GetComponent<Edible>();
