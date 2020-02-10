@@ -12,9 +12,10 @@ public class DoorOpenTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 9)
+
+        if (other.gameObject.name == "OVRPlayerController")
         {
-            elevator.OpenDoorFor(3);
+            StartCoroutine(elevator.OpenDoorFor(3));
         }
     }
 
