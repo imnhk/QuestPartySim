@@ -202,8 +202,7 @@ public class BreakableWindow : MonoBehaviour {
         if (isBroken == false)
         {
             // 점수 추가
-            GameManager.Instance.game.AddScore(breakScore);
-
+            GameManager.Instance.AddScore(breakScore);
 
             if (allreadyCalculated == true)
             {
