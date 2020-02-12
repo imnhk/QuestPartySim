@@ -77,6 +77,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer.Update();
+        if(alcohol > 0.001f)
+            alcohol -= 0.001f * Time.deltaTime;
 
         if (!timer.IsActive)
             return;
@@ -90,7 +92,6 @@ public class GameManager : MonoBehaviour
         if(alcohol >= 0.3f)
         {
             GameOver(GAMEOVER.PASSED_OUT);
-            // 만취엔딩
             return;
         }
     }
