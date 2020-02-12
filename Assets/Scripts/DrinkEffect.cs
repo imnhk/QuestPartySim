@@ -7,13 +7,16 @@ public class DrinkEffect : MonoBehaviour
     private ParticleSystem particle;
     private List<ParticleCollisionEvent> collisionEvents;
 
+    private float alcohol;
     private int drinkCount = 0;
 
     void Awake()
     {
         particle = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        alcohol = transform.parent.GetComponent<Drink>().alcohol;
     }
+
 
     void OnParticleCollision(GameObject other)
     {
@@ -30,12 +33,13 @@ public class DrinkEffect : MonoBehaviour
                 if(drinkCount >= 10)
                 {
                     drinkCount = 0;
-                    GameManager.Instance.game.AddScore(10);
+                    GameManager.Instance.AddScore(10);
+                    GameManager.Instance.Alcohol += this.alcohol;
                 }
             }
             else
             {
-                
+                // 바닥에 떨어진 효과
             }
 
         }

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Mouth : MonoBehaviour
 {
-    AudioSource mouthAudio;
+    AudioSource eatingAudio;
 
     // Start is called before the first frame update
     void Start()
     {
-        mouthAudio = GetComponent<AudioSource>();
+        eatingAudio = GetComponent<AudioSource>();
     }
-
 
     private void OnTriggerStay(Collider other)
     {

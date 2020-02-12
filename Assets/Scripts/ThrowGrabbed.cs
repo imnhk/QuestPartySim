@@ -31,7 +31,7 @@ public class ThrowGrabbed : MonoBehaviour
     private void ThrowForward()
     {
         Quaternion throwDirection = ovrGrabbable.grabbedBy.throwLine.rotation;
-        float throwForce = 3 + (float)GameManager.Instance.game.Str * 2 / (this.rb.mass + 1);
+        float throwForce = 3 + (float)3 * 2 / (this.rb.mass + 1);
 
         ovrGrabbable.grabbedBy.ForceRelease(ovrGrabbable);
         ovrGrabbable.GrabEnd(throwDirection * Vector3.forward * throwForce, angularVelocity);

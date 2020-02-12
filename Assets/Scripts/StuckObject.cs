@@ -35,7 +35,7 @@ public class StuckObject : MonoBehaviour
         isStuck = false;
 
         rb.constraints = RigidbodyConstraints.None;
-        GameManager.Instance.game.AddScore(unstuckScore);
+        GameManager.Instance.AddScore(unstuckScore);
     }
 
     

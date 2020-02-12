@@ -41,7 +41,7 @@ public class CollisionEffect : MonoBehaviour
         }
 
         if (impulse >= 1)
-            GameManager.Instance.game.AddScore((int)impulse);  
+            GameManager.Instance.AddScore((int)impulse);  
     }
 
     // Collision.impulse를 대체하기 위한 충격량 계산

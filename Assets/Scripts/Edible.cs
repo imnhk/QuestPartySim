@@ -29,7 +29,7 @@ public class Edible : MonoBehaviour
         lastEatTime = Time.time;
 
         leftCount -= 1;
-        GameManager.Instance.game.AddScore(eatScore);
+        GameManager.Instance.AddScore(eatScore);
 
         if (audioSource)
             audioSource.Play();

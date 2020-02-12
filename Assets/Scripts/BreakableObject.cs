@@ -28,8 +28,7 @@ public class BreakableObject : MonoBehaviour
 
     private void BreakObject()
     {
-        GameManager.Instance.game.DestroyCount += 1;
-        GameManager.Instance.game.AddScore(destroyScore);
+        GameManager.Instance.AddScore(destroyScore);
 
         if (brokenObjPrefab)
         {

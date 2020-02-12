@@ -7,76 +7,21 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
-    public Game game;
-
     [SerializeField]
+    private float gameLength = 180;
+
     private ElevatorAnimation elevator;
+    private GameObject player;
 
-    private void Awake()
-    {
-        // Singleton pattern
-        if (_instance != null && _instance != this)
-            Destroy(this.gameObject);
-        else
-            _instance = this;
-    }
-
-    void Start()
-    {
-        game = new Game();
-        StartCoroutine(StartGameIn(1f));
-    }
-
-    IEnumerator StartGameIn(float time)
-    {
-        yield return new WaitForSeconds(time);
-        game.Start();
-        StartCoroutine(elevator.OpenDoorFor(3f));
-    }
-
-    void Update()
-    {
-        game.Update();
-    }
-
-    // 디버그용
-    public void ReloadScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
-}
-
-public class Game
-{
-    public const float TIME_LIMIT = 60;
-    public const int DEFAULT_STR = 3;
     private Timer timer;
+    public enum GAMEOVER { DRUNK, KICKED_OUT, TIMEOUT }
+
 
     public float LeftTime { get { return timer.LeftTime; } }
-    public bool IsOn { get { return timer.IsOn; } }
+    public bool IsOn { get { return timer.IsActive; } }
 
-    private int totalDamage;
-    private int destroyCount;
-    private int score;
-    private int strength;
-    public int TotalDamage
-    {
-        get { return totalDamage; }
-        set
-        {
-            if (IsOn) return;
-            else totalDamage = value;
-        }
-    }
-    public int DestroyCount
-    {
-        get { return destroyCount; }
-        set
-        {
-            if (IsOn) return;
-            else destroyCount = value;
-        }
-    }
+    private int score = 0;
+    private float alcohol = 0;
 
     public void AddScore(int value)
     {
@@ -91,51 +36,122 @@ public class Game
     {
         get { return score; }
     }
-    public int Str
+    public float Alcohol
     {
-        get { return strength; }
+        get { return alcohol; }
         set
         {
-            if (IsOn) strength = value;
+            alcohol = value;
+            if (alcohol < 0) alcohol = 0;
         }
     }
 
-    public Game()
+    private void Awake()
     {
-        timer = new Timer(TIME_LIMIT);
-        score = 0;
-        totalDamage = 0;
-        destroyCount = 0;
-        strength = DEFAULT_STR;
+        // Singleton pattern
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+
+        elevator = GameObject.Find("Elevator").GetComponent<ElevatorAnimation>();
+        player = GameObject.Find("OVRPlayerController");
     }
 
-    public void Reset()
+    void Start()
     {
-        timer.Reset();
+        timer = new Timer(gameLength);
+        StartCoroutine(StartGameIn(1f));
     }
 
-    public void Start()
+    IEnumerator StartGameIn(float time)
     {
+        yield return new WaitForSeconds(1f);
         timer.Start();
+        StartCoroutine(elevator.OpenDoorFor(3f));
+        
     }
 
-    public void Update()
+    void Update()
     {
-        if(IsOn)
-            timer.Update();
+        timer.Update();
+
+        if (!timer.IsActive)
+            return;
+
+        if (timer.IsOver)
+        {
+            GameOver(GAMEOVER.TIMEOUT);
+            return;
+        }
+
+        if(alcohol >= 0.3f)
+        {
+            GameOver(GAMEOVER.DRUNK);
+            // 만취엔딩
+            return;
+        }
     }
 
+    public void GameOver(GAMEOVER type)
+    {
+        timer.Stop();
+        Debug.Log("Game Over! " + type);
+
+        switch (type)
+        {
+            case GAMEOVER.DRUNK:
+                StartCoroutine(playerPassout());
+
+
+                break;
+            case GAMEOVER.KICKED_OUT:
+
+                break;
+            case GAMEOVER.TIMEOUT:
+
+                break;
+        }
+    }
+
+    public void DebugPassout()
+    {
+        StartCoroutine(playerPassout());
+    }
+    public IEnumerator playerPassout()
+    {
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<OVRPlayerController>().enabled = false;
+
+        UIManager.Instance.cam.gameObject.GetComponent<OVRScreenFade>().fadeTime = 1f;
+        UIManager.Instance.cam.gameObject.GetComponent<OVRScreenFade>().FadeOut();
+
+        float elapsedTime = 0;
+
+        while(elapsedTime < 1f)
+        {
+            player.transform.Rotate(Vector3.right, 90 * Time.deltaTime);
+            yield return null;
+        }
+        // 게임오버 Scene으로
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+    public void ReloadScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
+    }
 }
+
 
 public class Timer
 {
-    float leftTime;
-    bool isActive;
+    private float leftTime;
+    private bool isActive;
+    private float startTime;
 
-    public float startTime;
     public float LeftTime { get { return leftTime; } }
     public bool IsOver{ get { return leftTime <= 0; } }
-    public bool IsOn { get { return isActive; } }
+    public bool IsActive { get { return isActive; } }
 
     public Timer(float startTime)
     {
@@ -153,15 +169,15 @@ public class Timer
 
         if (IsOver)
         {
+            Stop();
             leftTime = 0;
-            isActive = false;
         }
     }
 
     public void Reset()
     {
         leftTime = startTime;
-        isActive = false;
+        Stop();
     }
 
     public void Start()

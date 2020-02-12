@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Drink : MonoBehaviour
 {
-    public float left = 8f;
+    public float remaining = 8f;
+    public float alcohol = 0.001f;
 
     private ParticleSystem particle;
     private AudioSource pourSound;
@@ -19,7 +20,7 @@ public class Drink : MonoBehaviour
     {
         float bottleAngle = Vector3.Angle(Vector3.up, transform.up);
 
-        if (bottleAngle > 90 && left > 0)
+        if (bottleAngle > 90 && remaining > 0)
         {
             if (!particle.isPlaying)
                 particle.Play();
@@ -27,7 +28,7 @@ public class Drink : MonoBehaviour
             if (!pourSound.isPlaying)
                 pourSound.Play();
 
-            left -= Time.fixedDeltaTime;
+            remaining -= Time.fixedDeltaTime;
         }
         else
         {

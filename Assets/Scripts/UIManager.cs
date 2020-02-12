@@ -9,36 +9,35 @@ public class UIManager : MonoBehaviour
     static UIManager _instance;
     static public UIManager Instance { get { return _instance; } }
 
+    public Camera cam;
+
     // Texts
     [Header("UI Text")]
     [SerializeField]
     private TextMeshProUGUI timerText;
     private AnimateText timerTextAnim;
     private int timerInt;
-    //[SerializeField]
-    //private TextMeshProUGUI strengthUI;
+
     [SerializeField]
-    private List<TextMeshProUGUI> scoreTexts;
+    private TextMeshProUGUI scoreText;
     private AnimateText scoreTextAnim;
 
-    // Buttons
-    [Header("Button")]
-    public Button startButton;
+    [SerializeField]
+    private TextMeshProUGUI alcoholText;
+
 
     // Popups
     [Header("Score Popup")]
     [SerializeField]    GameObject scorePopup;
     [SerializeField]    int minSize = 10, maxSize = 20;
     [SerializeField]    Transform popupPos;
-    [SerializeField]    Camera cam;
 
     // sfx
     [Header("Effects")]
     private OVRGrabber leftController;
     private AudioSource leftHandAudio;
 
-
-    private Game currentGame;
+    private GameManager game;
     
 
     private void Awake()
@@ -47,35 +46,35 @@ public class UIManager : MonoBehaviour
             Destroy(this.gameObject);
         else
             _instance = this;
+
+        leftController = GameObject.Find("DistanceGrabHandLeft").GetComponent<OVRGrabber>();
+        leftHandAudio = GameObject.Find("LeftHandCanvas").GetComponent<AudioSource>();
+
+        scoreTextAnim = scoreText.gameObject.GetComponent<AnimateText>();
+        timerTextAnim = timerText.gameObject.GetComponent<AnimateText>();
+
+        game = GameManager.Instance;
+
     }
 
     void Start()
     {
-        currentGame = GameManager.Instance.game;
-        timerText.text = currentGame.LeftTime.ToString("F2");
-        timerTextAnim = timerText.gameObject.GetComponent<AnimateText>();
-        timerInt = (int)currentGame.LeftTime;
-        foreach (TextMeshProUGUI score in scoreTexts)
-            score.text = currentGame.Score.ToString();
-        scoreTextAnim = scoreTexts[0].gameObject.GetComponent<AnimateText>();
-
-        leftController = GameObject.Find("DistanceGrabHandLeft").GetComponent<OVRGrabber>();
-        leftHandAudio = GameObject.Find("LeftHandCanvas").GetComponent<AudioSource>();
+        timerInt = (int)game.LeftTime;
     }
 
     void Update()
     {
+        timerText.text = game.LeftTime.ToString("F2");
+        alcoholText.text = game.Alcohol.ToString("F3");
+        scoreText.text = game.Score.ToString();
 
-        timerText.text = currentGame.LeftTime.ToString("F2");
         // 매 초 타이머 감소 애니메이션
-        if(currentGame.IsOn && currentGame.LeftTime < timerInt)
+        if(game.IsOn && game.LeftTime < timerInt)
         {
             timerTextAnim.Enlarge(3f);
-            timerInt = (int)currentGame.LeftTime;
+            timerInt = (int)game.LeftTime;
         }
 
-        foreach(TextMeshProUGUI score in scoreTexts)
-            score.text = currentGame.Score.ToString();
     }
 
     public void MakeDamagePopup(int damage)

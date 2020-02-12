@@ -272,7 +272,7 @@ namespace OculusSampleFramework
             float closestMagSq = float.MaxValue;
 
             // 무게 확인
-            int strength = GameManager.Instance.game.Str;
+            int strength = 3;
  
             // First test for objects within the grab volume, if we're using those.
             // (Some usage of DistanceGrabber will not use grab volumes, and will only 
