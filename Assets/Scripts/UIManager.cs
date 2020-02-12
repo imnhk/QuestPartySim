@@ -53,12 +53,12 @@ public class UIManager : MonoBehaviour
         scoreTextAnim = scoreText.gameObject.GetComponent<AnimateText>();
         timerTextAnim = timerText.gameObject.GetComponent<AnimateText>();
 
-        game = GameManager.Instance;
 
     }
 
     void Start()
     {
+        game = GameManager.Instance;
         timerInt = (int)game.LeftTime;
     }
 

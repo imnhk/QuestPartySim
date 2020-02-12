@@ -14,14 +14,14 @@ public class GameManager : MonoBehaviour
     private GameObject player;
 
     private Timer timer;
-    public enum GAMEOVER { DRUNK, KICKED_OUT, TIMEOUT }
+    public enum GAMEOVER { PASSED_OUT = 1, KICKED_OUT = 2, TIMEOUT = 3 }
 
 
     public float LeftTime { get { return timer.LeftTime; } }
     public bool IsOn { get { return timer.IsActive; } }
 
-    private int score = 0;
-    private float alcohol = 0;
+    private int score;
+    private float alcohol;
 
     public void AddScore(int value)
     {
@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timer = new Timer(gameLength);
+        score = 0;
+        alcohol = 0;
         StartCoroutine(StartGameIn(1f));
     }
 
@@ -87,7 +89,7 @@ public class GameManager : MonoBehaviour
 
         if(alcohol >= 0.3f)
         {
-            GameOver(GAMEOVER.DRUNK);
+            GameOver(GAMEOVER.PASSED_OUT);
             // 만취엔딩
             return;
         }
@@ -97,12 +99,13 @@ public class GameManager : MonoBehaviour
     {
         timer.Stop();
         Debug.Log("Game Over! " + type);
+        GameStats.latestScore = score;
+        GameStats.latestTime = timer.LeftTime;
 
         switch (type)
         {
-            case GAMEOVER.DRUNK:
+            case GAMEOVER.PASSED_OUT:
                 StartCoroutine(playerPassout());
-
 
                 break;
             case GAMEOVER.KICKED_OUT:
@@ -114,9 +117,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DebugPassout()
+    public void DebugGameover(int type)
     {
-        StartCoroutine(playerPassout());
+        GameOver((GAMEOVER)type);
     }
     public IEnumerator playerPassout()
     {
@@ -131,6 +134,7 @@ public class GameManager : MonoBehaviour
         while(elapsedTime < 1f)
         {
             player.transform.Rotate(Vector3.right, 90 * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
         // 게임오버 Scene으로
