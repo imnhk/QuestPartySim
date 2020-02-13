@@ -201,17 +201,17 @@ PrefabInstance:
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 7.71e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 4.847e-42
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.6872964e-29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
@@ -1596,7 +1596,7 @@ PrefabInstance:
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 2.3510647e-38
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
@@ -1606,12 +1606,12 @@ PrefabInstance:
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 5.6e-44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 9.1837e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5284869989009501800, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
@@ -2295,7 +2295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &325820667
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,9 +2494,8 @@ GameObject:
   m_Component:
   - component: {fileID: 341732992}
   - component: {fileID: 341732991}
-  - component: {fileID: 341732993}
-  - component: {fileID: 341732994}
   - component: {fileID: 341732995}
+  - component: {fileID: 341732993}
   m_Layer: 10
   m_Name: GameManager
   m_TagString: Untagged
@@ -2552,23 +2551,6 @@ MonoBehaviour:
   minSize: 5
   maxSize: 12
   popupPos: {fileID: 1413666369}
---- !u!114 &341732994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341732990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 05897cc05637290429515cc827a1f896, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!114 &341732995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,7 +2563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee0d02ab7fdaf64cb3ad318efa61383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alcohol: 0
+  nextRotation: {x: 0, y: 0, z: 0, w: 0}
+  prevRotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &344384914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4892591326334160265, guid: 93ae620267cefae488da63df88d5f833,
@@ -7079,22 +7062,22 @@ PrefabInstance:
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 9.1834e-41
+      value: 5.65e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 6e-45
+      value: 1.4034e-41
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 1.53e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: -2.0228348
       objectReference: {fileID: 0}
     - target: {fileID: 5284869989009501800, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
@@ -12103,7 +12086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1276351585
 Transform:
   m_ObjectHideFlags: 0
@@ -15121,7 +15104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Layer
@@ -15205,7 +15188,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.46
+      value: 4.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_ClearFlags
@@ -15221,7 +15212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: field of view
-      value: 60
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_HDR
@@ -15229,7 +15220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RenderingPath
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: Damping
@@ -16801,72 +16792,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!1 &1786536590 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100012, guid: ce816f2e6abb0504092c23ed9b970dfd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1570258105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1786536591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786536590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 800094471}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 1
-    keepAlpha: 0
-  fog:
-    enabled: 0
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &1797250821
 GameObject:
   m_ObjectHideFlags: 0
@@ -23225,17 +23150,22 @@ PrefabInstance:
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.12e-42
+      value: 7.1e-44
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 3e-45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 3e-45
+      value: 6.7284115e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351515094927573251, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 5.66e-43
       objectReference: {fileID: 0}
     - target: {fileID: 5284869989009501800, guid: 7649a4cc0f43fba4bad3aed1f5b9aa35,
         type: 3}
