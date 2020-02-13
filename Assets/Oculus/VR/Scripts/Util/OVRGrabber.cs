@@ -368,7 +368,7 @@ public class OVRGrabber : MonoBehaviour
 			Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller);
 			Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
 
-            GrabbableRelease(linearVelocity, angularVelocity);
+            GrabbableRelease(linearVelocity * 2, angularVelocity);
         }
 
         // Re-enable grab volumes to allow overlap events

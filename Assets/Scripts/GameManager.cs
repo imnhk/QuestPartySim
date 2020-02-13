@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     private ElevatorAnimation elevator;
     private GameObject player;
+    private OVRScreenFade screenFade;
 
     private Timer timer;
     public enum GAMEOVER { PASSED_OUT = 1, KICKED_OUT = 2, TIMEOUT = 3 }
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
 
         elevator = GameObject.Find("Elevator").GetComponent<ElevatorAnimation>();
         player = GameObject.Find("OVRPlayerController");
+        screenFade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
     }
 
     void Start()
@@ -113,7 +115,7 @@ public class GameManager : MonoBehaviour
 
                 break;
             case GAMEOVER.TIMEOUT:
-
+                StartCoroutine(timeOut());
                 break;
         }
     }
@@ -122,13 +124,29 @@ public class GameManager : MonoBehaviour
     {
         GameOver((GAMEOVER)type);
     }
+
+    public IEnumerator timeOut()
+    {
+        // 카메라 옮기고
+
+        // skybox 바뀌는 거 보여주고
+
+        //효과음
+
+        screenFade.fadeTime = 3f;
+        screenFade.FadeOut();
+        yield return new WaitForSeconds(3f);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+
     public IEnumerator playerPassout()
     {
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<OVRPlayerController>().enabled = false;
 
-        UIManager.Instance.cam.gameObject.GetComponent<OVRScreenFade>().fadeTime = 1f;
-        UIManager.Instance.cam.gameObject.GetComponent<OVRScreenFade>().FadeOut();
+        screenFade.fadeTime = 1f;
+        screenFade.FadeOut();
 
         float elapsedTime = 0;
 
@@ -138,6 +156,8 @@ public class GameManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        yield return new WaitForSeconds(2);
         // 게임오버 Scene으로
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }

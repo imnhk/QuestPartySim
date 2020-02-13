@@ -53,7 +53,7 @@ public class AlcoholEffects : MonoBehaviour
             return;
         }
  
-        cameraRig.localRotation = Quaternion.Slerp(cameraRig.localRotation, nextRotation, (turningTime - timeUntilTurn) / turningTime);
+        cameraRig.localRotation = Quaternion.Lerp(nextRotation, cameraRig.localRotation, timeUntilTurn / turningTime);
         timeUntilTurn -= Time.deltaTime;
     }
 
