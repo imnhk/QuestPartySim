@@ -19,8 +19,7 @@ public class GameOverSceneManager : MonoBehaviour
 
     public void RestartGame()
     {
-        camObject.GetComponent<OVRScreenFade>().fadeTime = 0.5f;
-        camObject.GetComponent<OVRScreenFade>().FadeOut();
+        camObject.GetComponent<OVRScreenFade>().FadeOut(0.5f);
         StartCoroutine(loadGameWait(0.5f));
     }
 

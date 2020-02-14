@@ -551,6 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4773989229800792}
   - component: {fileID: 95144751485563148}
+  - component: {fileID: 3795083225749547524}
   m_Layer: 0
   m_Name: NPC_neutral
   m_TagString: Untagged
@@ -583,7 +584,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359247663918080}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 64d9371c44fee432aa8a3e14ca0a869e, type: 3}
   m_Controller: {fileID: 9100000, guid: 7cbd8e22ccaf5a8438fb816c59e89280, type: 2}
   m_CullingMode: 1
@@ -594,6 +595,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3795083225749547524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359247663918080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9ef186de03a2242a114f3390c2b6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1381410692711690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,7 +1991,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4618812952227140}
   - component: {fileID: 137231937820652416}
-  - component: {fileID: 6131397956181400919}
   - component: {fileID: 8782336319820047056}
   - component: {fileID: 5609171220258664009}
   m_Layer: 0
@@ -2099,19 +2111,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0016873032, y: 0.7909174, z: 0.031439245}
     m_Extent: {x: 0.23499835, y: 0.28121936, z: 0.29460996}
   m_DirtyAABB: 0
---- !u!135 &6131397956181400919
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759861228257218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.11773318
-  m_Center: {x: 0, y: 0.11773318, z: 0}
 --- !u!54 &8782336319820047056
 Rigidbody:
   m_ObjectHideFlags: 0

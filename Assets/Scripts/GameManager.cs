@@ -108,10 +108,11 @@ public class GameManager : MonoBehaviour
         switch (type)
         {
             case GAMEOVER.PASSED_OUT:
-                StartCoroutine(playerPassout());
+                StartCoroutine(passout());
 
                 break;
             case GAMEOVER.KICKED_OUT:
+                StartCoroutine(kickedOut());
 
                 break;
             case GAMEOVER.TIMEOUT:
@@ -125,6 +126,17 @@ public class GameManager : MonoBehaviour
         GameOver((GAMEOVER)type);
     }
 
+    public IEnumerator kickedOut()
+    {
+        // 잠시 기다리고 카메라 Fadeout
+        // 효과음
+        yield return new WaitForSeconds(3f);
+        screenFade.FadeOut(3f);
+        yield return new WaitForSeconds(3f);
+        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+
     public IEnumerator timeOut()
     {
         // 카메라 옮기고
@@ -133,20 +145,18 @@ public class GameManager : MonoBehaviour
 
         //효과음
 
-        screenFade.fadeTime = 3f;
-        screenFade.FadeOut();
+        screenFade.FadeOut(3f);
         yield return new WaitForSeconds(3f);
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
-    public IEnumerator playerPassout()
+    public IEnumerator passout()
     {
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<OVRPlayerController>().enabled = false;
 
-        screenFade.fadeTime = 1f;
-        screenFade.FadeOut();
+        screenFade.FadeOut(1f);
 
         float elapsedTime = 0;
 

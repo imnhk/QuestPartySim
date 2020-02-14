@@ -75,15 +75,10 @@ public class AlcoholEffects : MonoBehaviour
 
     IEnumerator Blink(float duration)
     {
-        float originalFadeTime = screenFade.fadeTime;
-        screenFade.fadeTime = duration / 2;
-
-        screenFade.FadeOut();
+        screenFade.FadeOut(duration / 2);
         yield return new WaitForSeconds(duration / 2);
-        screenFade.FadeIn();
+        screenFade.FadeIn(duration / 2);
         yield return new WaitForSeconds(duration / 2);
-
-        screenFade.fadeTime = originalFadeTime;
     }
 
 }
