@@ -378,7 +378,8 @@ public class OVRGrabber : MonoBehaviour
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
     {
         // 진동 추가
-        StartCoroutine(VibrateController(0.05f, 0.3f, 0.5f, m_controller));
+        if(enabled)
+            StartCoroutine(VibrateController(0.05f, 0.3f, 0.5f, m_controller));
 
         m_grabbedObj.GrabEnd(linearVelocity, angularVelocity);
         if(m_parentHeldObject) m_grabbedObj.transform.parent = null;

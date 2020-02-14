@@ -19,14 +19,14 @@ public class GameOverSceneManager : MonoBehaviour
 
     public void RestartGame()
     {
-        camObject.GetComponent<OVRScreenFade>().FadeOut(0.5f);
         StartCoroutine(loadGameWait(0.5f));
     }
 
     IEnumerator loadGameWait(float second)
     {
-        yield return new WaitForSeconds(second);
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
+        camObject.GetComponent<OVRScreenFade>().FadeOut(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
 }
