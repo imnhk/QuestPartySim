@@ -65,13 +65,18 @@ public class GameManager : MonoBehaviour
         timer = new Timer(gameLength);
         score = 0;
         alcohol = 0;
-        StartCoroutine(StartGameIn(1f));
+    }
+
+    public void StartGame(float time)
+    {
+        StartCoroutine(StartGameIn(time));
     }
 
     IEnumerator StartGameIn(float time)
     {
-        yield return new WaitForSeconds(1f);
-        timer.Start();
+        yield return new WaitForSeconds(time);
+        if(!timer.IsActive)
+            timer.Start();
         StartCoroutine(elevator.OpenDoorFor(3f));
         
     }
