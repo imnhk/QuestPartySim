@@ -107,24 +107,10 @@ public class OVRScreenFade : MonoBehaviour
     {
         StartCoroutine(Fade(0,1));
     }
-    public void FadeOut(float time)
-    {
-        float originalFadeTime = fadeTime;
-        fadeTime = time;
-        StartCoroutine(Fade(0,1));
-        fadeTime = originalFadeTime;
-    }
 
     public void FadeIn()
     {
         StartCoroutine(Fade(1, 0));
-    }
-    public void FadeIn(float time)
-    {
-        float originalFadeTime = fadeTime;
-        fadeTime = time;
-        StartCoroutine(Fade(1, 0));
-        fadeTime = originalFadeTime;
     }
 
 

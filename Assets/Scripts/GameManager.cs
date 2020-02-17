@@ -100,6 +100,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(GAMEOVER type)
     {
+        if (!timer.IsActive)
+            return;
+
         timer.Stop();
         Debug.Log("Game Over! " + type);
         GameStats.latestScore = score;
@@ -131,7 +134,9 @@ public class GameManager : MonoBehaviour
         // 잠시 기다리고 카메라 Fadeout
         // 효과음
         yield return new WaitForSeconds(3f);
-        screenFade.FadeOut(3f);
+
+        screenFade.fadeTime = 3;
+        screenFade.FadeOut();
         yield return new WaitForSeconds(3f);
         
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
@@ -145,7 +150,8 @@ public class GameManager : MonoBehaviour
 
         //효과음
 
-        screenFade.FadeOut(3f);
+        screenFade.fadeTime = 3;
+        screenFade.FadeOut();
         yield return new WaitForSeconds(3f);
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
@@ -156,7 +162,8 @@ public class GameManager : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<OVRPlayerController>().enabled = false;
 
-        screenFade.FadeOut(1f);
+        screenFade.fadeTime = 1;
+        screenFade.FadeOut();
 
         float elapsedTime = 0;
 
@@ -173,7 +180,7 @@ public class GameManager : MonoBehaviour
     }
     public void ReloadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
 
