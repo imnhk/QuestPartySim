@@ -32,6 +32,7 @@ public class GameOverSceneManager : MonoBehaviour
 
     IEnumerator loadGameWait(float time)
     {
+        Debug.Log("restart");
         camObject.GetComponent<OVRScreenFade>().fadeTime = time;
         camObject.GetComponent<OVRScreenFade>().FadeOut();
         yield return new WaitForSeconds(time);

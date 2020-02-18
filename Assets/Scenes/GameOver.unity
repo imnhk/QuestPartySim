@@ -517,11 +517,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camObject: {fileID: 1671799422}
   scoreText: {fileID: 1903737477}
-  gameoverTypeImage: {fileID: 2003502296}
+  typeImage: {fileID: 2003502296}
   typeImages:
-  - {fileID: 21300000, guid: e49e5c4347fc9bb448be6fc48dfe44e6, type: 3}
+  - {fileID: 21300000, guid: b079fc673b767694dbcae06aced92e32, type: 3}
   - {fileID: 21300000, guid: 8aeb88a763f82ff449fec860375357ad, type: 3}
-  - {fileID: 21300000, guid: a6ce7cf305c6c974b8e1e793cc5521b9, type: 3}
+  - {fileID: 21300000, guid: e49e5c4347fc9bb448be6fc48dfe44e6, type: 3}
   - {fileID: 21300000, guid: 80891189c56fd0e4eb669667ea24f68e, type: 3}
 --- !u!1 &508318209
 GameObject:
@@ -1793,7 +1793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.85, y: -1.37}
+  m_AnchoredPosition: {x: 2.8, y: -5.31}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718220881

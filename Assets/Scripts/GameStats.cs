@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameStats
 {
-    public static int gameoverType = 0;
+    public static int gameoverType;
 
     public static int latestScore = 0;
     public static float latestTime = 0;

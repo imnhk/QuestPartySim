@@ -24,8 +24,6 @@ public class BodyPartCollider : MonoBehaviour
             return;
   
 
-        Debug.Log(part + ", " + impulse + ", " + collision.gameObject.name) ;
-
         npc.PartCollision(part, impulse);
     }
 

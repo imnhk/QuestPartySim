@@ -171,8 +171,6 @@ public class GameManager : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<OVRPlayerController>().enabled = false;
 
-        screenFade.fadeTime = 1;
-        screenFade.FadeOut();
 
         float elapsedTime = 0;
 
@@ -182,6 +180,8 @@ public class GameManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        screenFade.fadeTime = 2;
+        screenFade.FadeOut();
 
         yield return new WaitForSeconds(2);
         // 게임오버 Scene으로
