@@ -11,8 +11,15 @@ public class UIManager : MonoBehaviour
 
     public Camera cam;
 
+    [Header("UI Gameobject")]
+    [SerializeField]
+    private Phone phone;
+
     // Texts
     [Header("UI Text")]
+    [SerializeField]
+    private Canvas leftHandCanvas;
+
     [SerializeField]
     private TextMeshProUGUI timerText;
     private AnimateText timerTextAnim;
@@ -24,7 +31,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI alcoholText;
-
 
     // Popups
     [Header("Score Popup")]
@@ -60,6 +66,8 @@ public class UIManager : MonoBehaviour
     {
         game = GameManager.Instance;
         timerInt = (int)game.LeftTime;
+
+        leftHandCanvas.gameObject.SetActive(false);
     }
 
     void Update()
@@ -75,6 +83,12 @@ public class UIManager : MonoBehaviour
             timerInt = (int)game.LeftTime;
         }
 
+    }
+
+    public void ShowLeftHandPhone()
+    {
+        leftHandCanvas.gameObject.SetActive(true);
+        phone.gameObject.SetActive(false);
     }
 
     public void MakeDamagePopup(int damage)

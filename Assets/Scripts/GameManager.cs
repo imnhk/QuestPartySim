@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private OVRScreenFade screenFade;
 
     private Timer timer;
-    public enum GAMEOVER { PASSED_OUT = 1, KICKED_OUT = 2, TIMEOUT = 3 }
+    public enum GAMEOVER { ARRESTED = 0, PASSED_OUT = 1, KICKED_OUT = 2, TIMEOUT = 3 }
 
 
     public float LeftTime { get { return timer.LeftTime; } }
@@ -67,13 +67,15 @@ public class GameManager : MonoBehaviour
         alcohol = 0;
     }
 
-    public void StartGame(float time)
+    public void StartGameButton(float time)
     {
         StartCoroutine(StartGameIn(time));
     }
 
     IEnumerator StartGameIn(float time)
     {
+        UIManager.Instance.ShowLeftHandPhone();
+
         yield return new WaitForSeconds(time);
         if(!timer.IsActive)
             timer.Start();
@@ -108,10 +110,12 @@ public class GameManager : MonoBehaviour
         if (!timer.IsActive)
             return;
 
+
         timer.Stop();
         Debug.Log("Game Over! " + type);
         GameStats.latestScore = score;
         GameStats.latestTime = timer.LeftTime;
+        GameStats.gameoverType = (int)type;   
 
         switch (type)
         {

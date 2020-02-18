@@ -6,27 +6,35 @@ using TMPro;
 
 public class GameOverSceneManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+
+    [SerializeField]
     private GameObject camObject;
+
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private Image typeImage;
+    [SerializeField]
+    private List<Sprite> typeImages;
+
 
 
     private void Start()
     {
-        camObject = GameObject.Find("CenterEyeAnchor");
-
         scoreText.text = GameStats.latestScore.ToString();
+        typeImage.sprite = typeImages[GameStats.gameoverType];
     }
 
     public void RestartGame()
     {
-        StartCoroutine(loadGameWait(0.5f));
+        StartCoroutine(loadGameWait(1f));
     }
 
-    IEnumerator loadGameWait(float second)
+    IEnumerator loadGameWait(float time)
     {
-        camObject.GetComponent<OVRScreenFade>().fadeTime = 0.5f;
+        camObject.GetComponent<OVRScreenFade>().fadeTime = time;
         camObject.GetComponent<OVRScreenFade>().FadeOut();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
