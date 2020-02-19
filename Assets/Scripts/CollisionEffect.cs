@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollisionEffect : MonoBehaviour
 {
+    public const string DefaultAudioPath = "SoundBits_FreeSFX/CasualGameSounds/DM-CGS-01";
     // 최소 충돌 상대속도
     public const float thresholdVelocity = 1f;
 
@@ -13,13 +14,26 @@ public class CollisionEffect : MonoBehaviour
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         // 효과음은 Scene 시작 때 재생되거나 Loop되지 않는다
-        if (audioSource)
+        audioSource = GetComponent<AudioSource>();
+        if (!audioSource)
         {
-            audioSource.playOnAwake = false;
-            audioSource.loop = false;
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        if(audioSource.clip == null)
+        {
+            audioSource.clip = Resources.Load<AudioClip>(DefaultAudioPath);
+            if(audioSource.clip == null)
+            {
+                Debug.LogError("Cannot load audioclip " + DefaultAudioPath);
+            }
+        }
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
+        audioSource.minDistance = 0;
+
     }
 
     private void Start()
