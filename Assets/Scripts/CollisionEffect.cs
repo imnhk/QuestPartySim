@@ -32,7 +32,8 @@ public class CollisionEffect : MonoBehaviour
 
         audioSource.playOnAwake = false;
         audioSource.loop = false;
-        audioSource.minDistance = 0;
+        audioSource.minDistance = 0.1f;
+        audioSource.maxDistance = 2f;
 
     }
 

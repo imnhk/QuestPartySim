@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Phone : MonoBehaviour
 {
-    public List<Material> screens;
-    private int currentScreen = 0;
+    [SerializeField]    List<Material>  screens;
+    [SerializeField]    GameObject  helpImage;
+    [SerializeField]    AudioClip   touchSound;
+    [SerializeField]    AudioClip   ringTone;
 
+    private AudioSource audioSrc;
     private Renderer ren;
+
+    private int screenIndex = 0;
+    private bool gettingCall = true;
+
 
     void Awake()
     {
         ren = GetComponent<Renderer>();
+        audioSrc = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Call());
     }
 
     private void FixedUpdate()
@@ -29,19 +42,58 @@ public class Phone : MonoBehaviour
 
     public void NextScreen()
     {
-        if(currentScreen < screens.Count - 1)
+        if(screenIndex < screens.Count - 1)
         {
-            currentScreen++;
-            ren.material = screens[currentScreen];
+            screenIndex++;
+            audioSrc.PlayOneShot(touchSound);
+            ren.material = screens[screenIndex];
+            Vibrate(0.05f);
+        }
+
+        if(screenIndex == 1)
+        {
+            gettingCall = false;
+            audioSrc.Stop();
+            helpImage.SetActive(false);
         }
     }
     public void PrevScreen()
     {
-        if (currentScreen > 0)
+        if (screenIndex > 0)
         {
-            currentScreen--;
-            ren.material = screens[currentScreen];
+            screenIndex--;
+            audioSrc.PlayOneShot(touchSound);
+            ren.material = screens[screenIndex];
+            Vibrate(0.05f);
         }
+
+        if (screenIndex == 0)
+        {
+            helpImage.SetActive(true);
+        }
+    }
+
+    private IEnumerator Call()
+    {
+        while (gettingCall)
+        {
+            audioSrc.Play();
+            Vibrate(0.5f);
+            yield return new WaitForSeconds(1);
+        }
+
+    }
+
+    private void Vibrate(float duration)
+    {
+        StartCoroutine(VibrateController(duration, 0.5f, 0.5f, OVRInput.Controller.LTouch));
+    }
+    private IEnumerator VibrateController(float duration, float frequency, float amplitude, OVRInput.Controller controller)
+    {
+        OVRInput.SetControllerVibration(frequency, amplitude, controller);
+        yield return new WaitForSeconds(duration);
+        OVRInput.SetControllerVibration(0, 0, controller);
+
     }
 
 }

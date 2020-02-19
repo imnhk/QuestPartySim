@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 4902617311903918679}
   - component: {fileID: 4902617311903918672}
   - component: {fileID: 4902617311903918673}
-  - component: {fileID: 4902617311903918674}
   m_Layer: 8
-  m_Name: Soju (1)
+  m_Name: Soju
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,19 +161,6 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: 
---- !u!114 &4902617311903918674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3974555787530466141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8ad4b1dd0646c4abcbaac0a978006d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angularVelocity: {x: 0, y: 5, z: 0}
 --- !u!1001 &4902617311191213466
 PrefabInstance:
   m_ObjectHideFlags: 0

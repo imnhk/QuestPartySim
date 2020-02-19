@@ -13,7 +13,11 @@ public class Drink : MonoBehaviour
     void Awake()
     {
         particle = GetComponentInChildren<ParticleSystem>();
-        pourSound = GetComponentInChildren<AudioSource>();
+        pourSound = particle.gameObject.GetComponent<AudioSource>();
+        pourSound.loop = true;
+        pourSound.minDistance = 0.1f;
+        pourSound.maxDistance = 1f;
+        pourSound.volume = 0.5f;
     }
 
     void Update()
@@ -26,7 +30,9 @@ public class Drink : MonoBehaviour
                 particle.Play();
 
             if (!pourSound.isPlaying)
+            {
                 pourSound.Play();
+            }
 
             remaining -= Time.fixedDeltaTime;
         }
