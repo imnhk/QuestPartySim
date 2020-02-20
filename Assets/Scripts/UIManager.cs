@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void ShowLeftHandPhone()
+    public void HideLeftHandPhone()
     {
         leftHandCanvas.gameObject.SetActive(true);
         phone.gameObject.SetActive(false);

@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     [SerializeField]
-    private float gameLength = 120;
+    private float gameLength;
 
     private ElevatorAnimation elevator;
     private GameObject player;
     private OVRScreenFade screenFade;
+    private AudioSource audioSrc;
+
+    [SerializeField]
+    private List<AudioClip> gameoverSounds;
 
     private Timer timer;
     public enum GAMEOVER { ARRESTED = 0, PASSED_OUT = 1, KICKED_OUT = 2, TIMEOUT = 3 }
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
         else
             _instance = this;
 
+        audioSrc = GetComponent<AudioSource>();
         elevator = GameObject.Find("Elevator").GetComponent<ElevatorAnimation>();
         player = GameObject.Find("OVRPlayerController");
         screenFade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
@@ -69,16 +74,29 @@ public class GameManager : MonoBehaviour
 
     public void StartGameButton(float time)
     {
-        StartCoroutine(StartGameIn(time));
+        if (timer.IsActive)
+        {
+            StartCoroutine(elevator.OpenDoorFor(3f));
+        }
+        else
+        {
+            StartCoroutine(StartGameIn(time));
+        }
     }
 
     IEnumerator StartGameIn(float time)
     {
-        UIManager.Instance.ShowLeftHandPhone();
+        UIManager.Instance.HideLeftHandPhone();
+        elevator.audioSrc.Play();
+        elevator.button.SetActive(false);
 
         yield return new WaitForSeconds(time);
-        if(!timer.IsActive)
+        if (!timer.IsActive)
             timer.Start();
+
+        elevator.audioSrc.Stop();
+        elevator.button.SetActive(true);
+
         StartCoroutine(elevator.OpenDoorFor(3f));
         
     }
@@ -107,28 +125,31 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(GAMEOVER type)
     {
-        if (!timer.IsActive)
-            return;
+
 
 
         timer.Stop();
         Debug.Log("Game Over! " + type);
         GameStats.latestScore = score;
         GameStats.latestTime = timer.LeftTime;
-        GameStats.gameoverType = (int)type;   
+        GameStats.gameoverType = (int)type;
+
+        if (!timer.IsActive)
+        {
+            StartCoroutine(timeOut());
+            return;
+        }
 
         switch (type)
         {
             case GAMEOVER.PASSED_OUT:
+                audioSrc.PlayOneShot(gameoverSounds[(int)GAMEOVER.PASSED_OUT]);
                 StartCoroutine(passout());
 
                 break;
             case GAMEOVER.KICKED_OUT:
+                audioSrc.PlayOneShot(gameoverSounds[(int)GAMEOVER.KICKED_OUT]);
                 StartCoroutine(kickedOut());
-
-                break;
-            case GAMEOVER.TIMEOUT:
-                StartCoroutine(timeOut());
                 break;
         }
     }
@@ -141,9 +162,9 @@ public class GameManager : MonoBehaviour
     public IEnumerator kickedOut()
     {
         // 잠시 기다리고 카메라 Fadeout
-        // 효과음
-        yield return new WaitForSeconds(3f);
+        // 
 
+        yield return new WaitForSeconds(3f);
         screenFade.fadeTime = 3;
         screenFade.FadeOut();
         yield return new WaitForSeconds(3f);

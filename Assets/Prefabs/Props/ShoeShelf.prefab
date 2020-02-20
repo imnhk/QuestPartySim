@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7037574704742593674}
   - component: {fileID: 909832853107952279}
   - component: {fileID: 3462319335840647939}
-  - component: {fileID: 8030992721408737865}
   m_Layer: 0
   m_Name: CyanShoe
   m_TagString: Untagged
@@ -125,24 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8030992721408737865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289681929024171545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &2274243960409565638
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +179,6 @@ GameObject:
   - component: {fileID: 3095536849988456213}
   - component: {fileID: 6316832389463469926}
   - component: {fileID: 4028143902491944961}
-  - component: {fileID: 2753733579225198489}
   m_Layer: 0
   m_Name: YellowShoe
   m_TagString: Untagged
@@ -309,24 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2753733579225198489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2463097070897525031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &3419695290825242159
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +303,6 @@ GameObject:
   - component: {fileID: 8600442716162093422}
   - component: {fileID: 6824881568774046239}
   - component: {fileID: 6158669559988153188}
-  - component: {fileID: 724621170070824376}
   m_Layer: 0
   m_Name: BlueShoe
   m_TagString: Untagged
@@ -452,24 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &724621170070824376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3419695290825242159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &3754706421891730377
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +634,6 @@ GameObject:
   - component: {fileID: 5328947407883388351}
   - component: {fileID: 64924152087966101}
   - component: {fileID: 2682251508964903809}
-  - component: {fileID: 4898673092950301083}
   m_Layer: 0
   m_Name: YellowShoe
   m_TagString: Untagged
@@ -802,24 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4898673092950301083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899202208539051295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &3899709255974683344
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +758,6 @@ GameObject:
   - component: {fileID: 6170702252359144347}
   - component: {fileID: 5172098281294053350}
   - component: {fileID: 2714712600679610527}
-  - component: {fileID: 2254717932981421353}
   m_Layer: 0
   m_Name: BrownShoe
   m_TagString: Untagged
@@ -945,24 +868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2254717932981421353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3899709255974683344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &3922793633055447662
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +882,6 @@ GameObject:
   - component: {fileID: 4505265409897795675}
   - component: {fileID: 2712036045907551923}
   - component: {fileID: 640421852302270012}
-  - component: {fileID: 4547538935009094583}
   m_Layer: 0
   m_Name: BrownShoe
   m_TagString: Untagged
@@ -1088,24 +992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4547538935009094583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922793633055447662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &4379380498159015832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1006,6 @@ GameObject:
   - component: {fileID: 8254907278283362350}
   - component: {fileID: 5527838593686987774}
   - component: {fileID: 8280885839097863083}
-  - component: {fileID: 194974206230973438}
   m_Layer: 0
   m_Name: CyanShoe
   m_TagString: Untagged
@@ -1231,24 +1116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &194974206230973438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379380498159015832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &6297811679663328859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1130,6 @@ GameObject:
   - component: {fileID: 6783518720418805506}
   - component: {fileID: 4129243061919487819}
   - component: {fileID: 2669087374235829360}
-  - component: {fileID: 3556702836613301229}
   m_Layer: 0
   m_Name: BlueShoe
   m_TagString: Untagged
@@ -1374,24 +1240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3556702836613301229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297811679663328859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &6648336254359131101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1254,6 @@ GameObject:
   - component: {fileID: 1662382236844048168}
   - component: {fileID: 2945904353984410520}
   - component: {fileID: 8536871368828582085}
-  - component: {fileID: 3062878784837436336}
   m_Layer: 0
   m_Name: RedShoe
   m_TagString: Untagged
@@ -1517,24 +1364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3062878784837436336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6648336254359131101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!1 &7102963175019611681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1378,6 @@ GameObject:
   - component: {fileID: 2275772506392337242}
   - component: {fileID: 7745406853970256882}
   - component: {fileID: 6384618277589587105}
-  - component: {fileID: 5046492185685701080}
   m_Layer: 0
   m_Name: RedShoe
   m_TagString: Untagged
@@ -1660,21 +1488,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5046492185685701080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102963175019611681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
