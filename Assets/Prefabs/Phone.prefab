@@ -160,8 +160,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 203d1e296814b5145aeaf69a16ac45f6, type: 2}
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1821589f627ea440b78e031685c3454, type: 2}
+  - {fileID: 6271573414225017425, guid: bea009044531fce41a1db734d9cd66ef, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,10 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screens:
+  - {fileID: 2100000, guid: e1821589f627ea440b78e031685c3454, type: 2}
   - {fileID: 2100000, guid: 203d1e296814b5145aeaf69a16ac45f6, type: 2}
   - {fileID: 2100000, guid: cc3b3a8add73cd7459a9aaf85d550953, type: 2}
   - {fileID: 2100000, guid: 9e2e873d4323365478bdadaa69bd423d, type: 2}
   - {fileID: 2100000, guid: 03c29e279e93ea1479af2103753e799f, type: 2}
+  - {fileID: 2100000, guid: 55a3dca2421f47149ac17982995097f2, type: 2}
+  - {fileID: 2100000, guid: 1786c634fbce5134eb93c6ccba47c264, type: 2}
+  - {fileID: 2100000, guid: 87a515f23c705c14dbebd9c28cff3fac, type: 2}
+  - {fileID: 2100000, guid: b4a0d39b0e955d54982ada2ef5e7d806, type: 2}
   helpImage: {fileID: 5921454488750100030}
   touchSound: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   ringTone: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}

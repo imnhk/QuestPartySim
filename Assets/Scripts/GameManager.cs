@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     [SerializeField]
-    private float gameLength = 180;
+    private float gameLength = 120;
 
     private ElevatorAnimation elevator;
     private GameObject player;
@@ -89,14 +89,14 @@ public class GameManager : MonoBehaviour
         if(alcohol > 0.001f)
             alcohol -= 0.001f * Time.deltaTime;
 
-        if (!timer.IsActive)
-            return;
-
         if (timer.IsOver)
         {
             GameOver(GAMEOVER.TIMEOUT);
             return;
         }
+
+        if (!timer.IsActive)
+            return;
 
         if(alcohol >= 0.3f)
         {

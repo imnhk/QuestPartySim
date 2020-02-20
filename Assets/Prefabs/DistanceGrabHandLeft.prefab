@@ -3523,6 +3523,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone
       objectReference: {fileID: 0}
+    - target: {fileID: 3575523857915682684, guid: 11616cb86ae474f4390320f778f40f17,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575523857915682684, guid: 11616cb86ae474f4390320f778f40f17,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575523857915682684, guid: 11616cb86ae474f4390320f778f40f17,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11616cb86ae474f4390320f778f40f17, type: 3}
 --- !u!4 &4866020856548890487 stripped

@@ -17,12 +17,24 @@ public class GameOverSceneManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> typeImages;
 
+    [SerializeField]
+    private AudioClip gameoverSound;
+    private AudioSource audioSrc;
 
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
         scoreText.text = GameStats.latestScore.ToString();
         typeImage.sprite = typeImages[GameStats.gameoverType];
+
+        if (gameoverSound)
+        {
+            audioSrc.PlayOneShot(gameoverSound);
+        }
     }
 
     public void RestartGame()

@@ -61,10 +61,16 @@ namespace OculusSampleFramework
             get { return mass; }
         }
 
+        private ThrowGrabbed throwGrabbed;
+
         protected override void Start()
         {
             base.Start();
 
+            // ThrowGrabbed 스크립트 자동 추가
+            throwGrabbed = GetComponent<ThrowGrabbed>();
+            if (throwGrabbed == null)
+                throwGrabbed = gameObject.AddComponent<ThrowGrabbed>();
 
             // 힘과 무게 비교 처리를 위해 추가
             mass = GetComponent<Rigidbody>().mass;

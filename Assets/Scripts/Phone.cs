@@ -59,7 +59,7 @@ public class Phone : MonoBehaviour
     }
     public void PrevScreen()
     {
-        if (screenIndex > 0)
+        if (screenIndex > 1)
         {
             screenIndex--;
             audioSrc.PlayOneShot(touchSound);
