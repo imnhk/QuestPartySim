@@ -27484,7 +27484,6 @@ GameObject:
   - component: {fileID: 8570042545055749294}
   - component: {fileID: 2010000204606368435}
   - component: {fileID: 2830571425155459879}
-  - component: {fileID: 8662469327597625965}
   m_Layer: 0
   m_Name: CyanShoe
   m_TagString: Untagged
@@ -27500,24 +27499,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402717810647049531}
   m_Mesh: {fileID: -8793600128357336897, guid: 4891f1cf590998741a6085d19d4a3498, type: 3}
---- !u!114 &1580803739940187098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3135134251057821628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!64 &1702990188390076849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27662,24 +27643,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d1fed6a9ee666b4e9023e0a58de2e51, type: 3}
---- !u!114 &2110723386957104540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4049200187859162635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!65 &2149124335682040035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27822,7 +27785,6 @@ GameObject:
   - component: {fileID: 6823144541476644251}
   - component: {fileID: 1702990188390076849}
   - component: {fileID: 3638294047646772133}
-  - component: {fileID: 6106601375916734911}
   m_Layer: 0
   m_Name: YellowShoe
   m_TagString: Untagged
@@ -27871,24 +27833,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2747027285818827721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621474950331444863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!114 &2830571425155459879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27954,7 +27898,6 @@ GameObject:
   - component: {fileID: 7335175011732385802}
   - component: {fileID: 6625436378057720794}
   - component: {fileID: 7327085471178242959}
-  - component: {fileID: 1580803739940187098}
   m_Layer: 0
   m_Name: CyanShoe
   m_TagString: Untagged
@@ -28058,24 +28001,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8800976130472988559}
   m_Mesh: {fileID: 6508942946276188115, guid: c63501206ab6f7e45b28afa3b0de82fe, type: 3}
---- !u!114 &3563383836009353149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3848951631653261571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!114 &3624857233758757972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28120,7 +28045,6 @@ GameObject:
   - component: {fileID: 4445363979254837041}
   - component: {fileID: 4678520067801632578}
   - component: {fileID: 2351515795060459557}
-  - component: {fileID: 3563383836009353149}
   m_Layer: 0
   m_Name: YellowShoe
   m_TagString: Untagged
@@ -28194,7 +28118,6 @@ GameObject:
   - component: {fileID: 6926111492808069450}
   - component: {fileID: 5328405976504590907}
   - component: {fileID: 4770272927417781056}
-  - component: {fileID: 2110723386957104540}
   m_Layer: 0
   m_Name: BlueShoe
   m_TagString: Untagged
@@ -28395,24 +28318,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4450995311454479252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5406349495989564409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!33 &4531767807940668221
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28449,7 +28354,6 @@ GameObject:
   - component: {fileID: 5289322680837396262}
   - component: {fileID: 3317622466465609583}
   - component: {fileID: 3624857233758757972}
-  - component: {fileID: 2747027285818827721}
   m_Layer: 0
   m_Name: BlueShoe
   m_TagString: Untagged
@@ -29908,7 +29812,6 @@ GameObject:
   - component: {fileID: 24034738331098892}
   - component: {fileID: 4586178204669629372}
   - component: {fileID: 7006928008280168673}
-  - component: {fileID: 4450995311454479252}
   m_Layer: 0
   m_Name: RedShoe
   m_TagString: Untagged
@@ -30243,24 +30146,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5858102597636329980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8491079693318301189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!65 &5915688598625294777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30344,24 +30229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2280d9178e861941ad980616aa15bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6106601375916734911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402717810647049531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!4 &6179237841097612370
 Transform:
   m_ObjectHideFlags: 0
@@ -31406,7 +31273,6 @@ GameObject:
   - component: {fileID: 635499754291280766}
   - component: {fileID: 8951364811019076566}
   - component: {fileID: 5755086708543403141}
-  - component: {fileID: 5858102597636329980}
   m_Layer: 0
   m_Name: RedShoe
   m_TagString: Untagged
@@ -31430,24 +31296,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8662469327597625965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387597471049928253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  m_materialColorField: 
 --- !u!23 &8677866689951822791
 MeshRenderer:
   m_ObjectHideFlags: 0

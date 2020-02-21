@@ -125,9 +125,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(GAMEOVER type)
     {
-
-
-
         timer.Stop();
         Debug.Log("Game Over! " + type);
         GameStats.latestScore = score;
@@ -161,8 +158,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator kickedOut()
     {
-        // 잠시 기다리고 카메라 Fadeout
-        // 
+        // 잠시 기다리고 카메라 Fadeout 
 
         yield return new WaitForSeconds(3f);
         screenFade.fadeTime = 3;
@@ -174,11 +170,6 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator timeOut()
     {
-        // 카메라 옮기고
-
-        // skybox 바뀌는 거 보여주고
-
-        //효과음
 
         screenFade.fadeTime = 3;
         screenFade.FadeOut();

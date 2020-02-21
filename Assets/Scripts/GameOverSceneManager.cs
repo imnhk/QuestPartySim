@@ -21,6 +21,12 @@ public class GameOverSceneManager : MonoBehaviour
     private AudioClip gameoverSound;
     private AudioSource audioSrc;
 
+    [Header("Ranking")]
+    [SerializeField]
+    private List<TextMeshProUGUI> rankText;
+    [SerializeField]
+    private List<TextMeshProUGUI> dateText;
+
     private void Awake()
     {
         audioSrc = GetComponent<AudioSource>();
@@ -34,6 +40,24 @@ public class GameOverSceneManager : MonoBehaviour
         if (gameoverSound)
         {
             audioSrc.PlayOneShot(gameoverSound);
+        }
+
+        GameStats.LoadRank();
+        GameStats.UpdateRank();
+        UpdateRankPanel();
+        GameStats.SaveRank();
+    }
+
+    private void UpdateRankPanel()
+    {
+        for(int i=0; i<rankText.Count; i++)
+        {
+            rankText[i].text = GameStats.rankData.score[i].ToString();
+            dateText[i].text = GameStats.rankData.date[i].ToString("yyyy/MM/dd");
+            if(GameStats.rankData.score[i] == 0)
+            {
+                dateText[i].text = "-";
+            }
         }
     }
 
