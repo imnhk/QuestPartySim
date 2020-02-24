@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
         else
         {
             StartCoroutine(StartGameIn(time));
+            StartCoroutine(UIManager.Instance.showHelp(10f));
+
         }
     }
 
@@ -98,7 +100,7 @@ public class GameManager : MonoBehaviour
         elevator.button.SetActive(true);
 
         StartCoroutine(elevator.OpenDoorFor(3f));
-        
+
     }
 
     void Update()

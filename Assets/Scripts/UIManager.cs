@@ -15,7 +15,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Phone phone;
 
-    // Texts
+    [Header("Help UI")]
+    [SerializeField]
+    private GameObject helpImage;
+
     [Header("UI Text")]
     [SerializeField]
     private Canvas leftHandCanvas;
@@ -112,6 +115,12 @@ public class UIManager : MonoBehaviour
         // 효과음 재생
         leftHandAudio.volume = Mathf.Lerp(0.2f, 1f, (float)damage / 100);
         leftHandAudio.Play();
+    }
 
+    public IEnumerator showHelp(float time)
+    {
+        helpImage.SetActive(true);
+        yield return new WaitForSeconds(time);
+        helpImage.SetActive(false);
     }
 }

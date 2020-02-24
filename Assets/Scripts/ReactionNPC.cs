@@ -7,10 +7,12 @@ public class ReactionNPC : MonoBehaviour
     private Animator animator;
 
     private Collider headCollider;
+    private NpcSpeech speech;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        speech = GetComponent<NpcSpeech>();
     }
 
     public void PartCollision(PART part, float impulse)
@@ -26,6 +28,7 @@ public class ReactionNPC : MonoBehaviour
         {
             animator.enabled = false;
             GameManager.Instance.GameOver(GameManager.GAMEOVER.KICKED_OUT);
+            speech.HideCanvas();
         }
     }
 
