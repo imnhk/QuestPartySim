@@ -19,12 +19,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject helpImage;
 
-    [Header("UI Text")]
+    [Header("LHand UI")]
     [SerializeField]
     private Canvas leftHandCanvas;
 
     [SerializeField]
     private TextMeshProUGUI timerText;
+    [SerializeField]
+    private Image timerProgress;
     private AnimateText timerTextAnim;
     private int timerInt;
 
@@ -34,6 +36,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI alcoholText;
+    [SerializeField]
+    private Image alcoholProgress;
+
 
     // Popups
     [Header("Score Popup")]
@@ -75,15 +80,20 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        timerText.text = game.LeftTime.ToString("F2");
-        alcoholText.text = game.Alcohol.ToString("F3");
+        timerText.text = ((int)game.LeftTime).ToString();
+
         scoreText.text = game.Score.ToString();
+
+        alcoholText.text = game.Alcohol.ToString("F3");
+        alcoholProgress.fillAmount = game.Alcohol / 0.3f;
+
 
         // 매 초 타이머 감소 애니메이션
         if(game.IsOn && game.LeftTime < timerInt)
         {
             timerTextAnim.Enlarge(3f);
             timerInt = (int)game.LeftTime;
+            timerProgress.fillAmount = game.LeftTime / game.gameLength;
         }
 
     }

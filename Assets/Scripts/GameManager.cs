@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
-    [SerializeField]
-    private float gameLength;
+    public float gameLength;
 
     private ElevatorAnimation elevator;
     private GameObject player;
